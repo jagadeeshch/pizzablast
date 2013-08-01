@@ -8,6 +8,10 @@ Könnt ihr hier herunterladen: http://tortoisesvn.net/downloads.html
 = Tipps zum Benutzen von Turtle SVN =
 
 http://mzaher.wordpress.com/2009/03/02/how-to-use-svn-with-google-code/
+Beachten: 
+Der Benutzername und der Projektname wird nicht in der URL angegeben. Also nach /trunk sollte nichts mehr in der URL stehen, ansonsten könnt ihr nichts hochladen. 
+Einen leeren Ordner anlegen für das Projekt am besten! 
+Ansonsten ... bei Fragen einfach melden! 
 
 = Zum Projekt =
 
