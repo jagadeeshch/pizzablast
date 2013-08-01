@@ -1,0 +1,28 @@
+/* CSS Document */
+
+#top
+{
+	width: 500px;
+	height: 200px;
+	background:#FC0;
+}
+
+#x3dom
+{
+	width: 500px;
+	height: 500px;
+	background: #F90;
+}
+
+#canvas
+{
+	width: 45%;
+	height: 35%;
+	background: #000;
+}
+
+#footer
+{
+	width: 500px;
+	height: 100px;
+	background: #FC6;
