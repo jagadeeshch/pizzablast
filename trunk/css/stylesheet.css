@@ -1,28 +1,131 @@
 /* CSS Document */
 
-#top
+body
 {
-	width: 500px;
-	height: 200px;
-	background:#FC0;
+	background-image: url(../images/tileable_wood_texture.png);
+	background-repeat: repeat;
 }
 
-#x3dom
+#wrapper 
 {
-	width: 500px;
-	height: 500px;
-	background: #F90;
+	width: 100%;
+	min-width: 740px;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFF;
 }
 
-#canvas
+h1, h2 
 {
-	width: 45%;
-	height: 35%;
-	background: #000;
+	color: #406472;
+	font-style: normal;
+	font-weight: 600;
+	font-family: source-sans-pro;
 }
 
-#footer
+h2
 {
-	width: 500px;
-	height: 100px;
-	background: #FC6;
+	color: #799998;
+	font-style: normal;
+	font-weight: 600;
+	font-family: source-sans-pro;
+}
+
+#main 
+{
+	width: 58%;
+	margin-left: 2%;
+	float: left;
+}
+
+#sidebar 
+{
+	width: 34%;
+	margin-left: 4%;
+	float: left;
+}
+
+#bigimage img 
+{
+	max-width: 100%;
+}
+
+#bigimage 
+{
+	position: relative;
+}
+
+#imagearticle
+{
+	width: 36%;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: absolute;
+	top: 25px;
+	right: 33px;
+	background-color: #B44B1C;
+	border-radius: 21px;
+	color: #FFFFFF;
+}
+
+a:link 
+{
+	color: #FF6600;
+}
+
+a:visited 
+{
+	color: #FF944C;
+
+}
+a:hover, a:active, a:focus 
+{
+	color: #7F3300;
+	text-decoration: underline;
+}
+
+#mainnavigation ul 
+{
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	list-style-type: none;
+}
+
+#mainnavigation a 
+{
+	width: 20%;
+	display: block;
+	float: left;
+	text-align: center;
+	background-color:#e9b649;
+	color: #406472;
+	text-transform: uppercase;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+#mainnavigation a:hover, #mainnavigation a:active, #mainnavigation a:focus, #mainnavigation a.thispage 
+{
+	background-color: #f9ebae;
+	text-decoration: none;
+}
+
+#footer 
+{
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2%;
+	background-color: #f9ebae;
+	color: #406472;
+	clear: left;
+}
+
+.orange { color:#F90 }
+
