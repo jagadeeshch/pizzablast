@@ -134,3 +134,14 @@ a:hover, a:active, a:focus
 	margin:50px;
 }
 
+input{
+	float:right;
+}
+
+form
+{
+	width: 25%;
+}
+
+	
+
