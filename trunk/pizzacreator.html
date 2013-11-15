@@ -9,15 +9,52 @@
         <link rel="stylesheet" href="x3dom/x3dom.css" type="text/css" />
         <link rel="stylesheet" href="css/stylesheet.css" type="text/css" media="screen"/>
 		<title>Make your own Pizza!</title>
+
+		 <script type="text/javascript">
+
+
+		 	 function addNode()
+		     {
+		 		var c = document.createElement('scene');
+		 		var b = document.createElement('Inline');
+		 		b.setAttribute('url','salami.x3d');
+		         c.appendChild(b);
+		         var ot = document.getElementById('next');
+		         ot.appendChild(c);
+
+		         return false;
+		     };
+
+		 	function removeNode()
+		     {
+		         var ot = document.getElementById('next');
+		         for (var i = 0; i <= ot.childNodes.length; i++)
+		         {
+		         	if (ot.childNodes[i].nodeType === Node.ELEMENT_NODE) {
+		         		ot.removeChild(ot.childNodes[i]);
+		   				break;
+		   			}
+		   		}
+
+		         return false;
+		     };
+
+		     function changeTexture(tex)
+		     {
+		     	document.getElementById('my_tex').setAttribute("url", tex);
+		     }
+
+			</script>
+
 	</head>
 
 	<body>
     	<div id="wrapper">
-            <div id="top">                   
+            <div id="top">
             	<div id="logo">
             		<img src="images/logoSmall.jpg"  />
             	</div>
-                
+
                 <nav id="mainnavigation">
       				<ul>
         				<li><a href="index.html">Home</a></li>
@@ -27,6 +64,20 @@
                         <li><a href="#">Login / Registering</a></li>
                     </ul>
                 </nav>
+
+                <x3d id='someUniqueId' showStat='false' id="test" showLog='false' x='0px' y='0px' width='1000px' height='750'>
+					      <scene id="next">
+							<inline  id='inline_element' url='text.x3d' ></inline>
+					      <scene>
+				 </x3d>
+						<input type="button" id="but" value="Hinzuf&uuml;gen" onclick="addNode();"> </input><br />
+						<input type="button" id="but" value="Entfernen" onclick="removeNode();"> </input><br />
+
+						<img width="10%" src="miau.jpg" onclick="changeTexture('miau.jpg');" style="cursor:pointer;" border="1">
+						<br />
+						<img width="10%" src="fladenbrottextur_512.jpg" onclick="changeTexture('fladenbrottextur_512.jpg');" style="cursor:pointer;" border="1">
+						<br />
+		<img width="10%" src="salami.jpg" onclick="changeTexture('salami.jpg');" style="cursor:pointer;" border="1">
             </div>
             </body>
 </html>
