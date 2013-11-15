@@ -8,9 +8,9 @@
         <script type="text/javascript" src="js/javascript.js"> </script>
         <link rel="stylesheet" href="x3dom/x3dom.css" type="text/css" />
         <link rel="stylesheet" href="css/stylesheet.css" type="text/css" media="screen"/>
-		<title>Make your own Pizza!</title>
+		<title>Erstelle Deine eigene Pizza!</title>
 
-		 <script type="text/javascript">
+		<script type="text/javascript">
 
 
 		 	 function addNode()
@@ -30,7 +30,8 @@
 		         var ot = document.getElementById('next');
 		         for (var i = 0; i <= ot.childNodes.length; i++)
 		         {
-		         	if (ot.childNodes[i].nodeType === Node.ELEMENT_NODE) {
+		         	if (ot.childNodes[i].nodeType === Node.ELEMENT_NODE) 
+					{
 		         		ot.removeChild(ot.childNodes[i]);
 		   				break;
 		   			}
@@ -77,7 +78,7 @@
 						<br />
 						<img width="10%" src="fladenbrottextur_512.jpg" onclick="changeTexture('fladenbrottextur_512.jpg');" style="cursor:pointer;" border="1">
 						<br />
-		<img width="10%" src="salami.jpg" onclick="changeTexture('salami.jpg');" style="cursor:pointer;" border="1">
+						<img width="10%" src="salami.jpg" onclick="changeTexture('salami.jpg');" style="cursor:pointer;" border="1">
             </div>
             </body>
 </html>
