@@ -28,6 +28,44 @@ EOD;
 
 if($email&&$password&&$password2)
 {
+	if(filter_var($email, FILTER_VALIDATE_EMAIL)&&password==password2)
+	{
+		$result = mysql_query("SELECT customerid FROM customer WHERE email LIKE '$email'");
+		$menge = mysql_num_rows($result);
+		
+		if($menge == 0)
+    	{
+			$eintrag = "INSERT INTO customer (email, password) VALUES ('$email', '$password')";
+    		$eintragen = mysql_query($eintrag);
+		}
+		else
+		{
+			header("location:register_emailalreadyexists.html");
+		}
+		
+		if($eintragen == true)
+		{
+			$headers = "From: $webmaster\r\n";
+			$headers .= "Content-type: text/html\r\n";
+			$headers = mail($email, $emailBetreff, $body);
+			header("location:register_success.html");
+		}
+		else
+		{
+			header("location:register_nosuccess.html");
+		}
+	}
+	else
+	{
+		header("location:register_typeerror.html");
+	}
+}
+else
+{
+	header("location:register_pleasefill.html");
+}
+		
+		
 	
 	
 }
