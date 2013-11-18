@@ -16,20 +16,43 @@ body
 	background-color: #FFF;
 }
 
-h1, h2 
+#logo
 {
+	margin-top: 0.5em;
+	text-align:center;
+	margin-bottom: 0.5em;
+}
+
+#topfooter
+{
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2%;
+	background-color: #f9ebae;
 	color: #406472;
-	font-style: normal;
-	font-weight: 600;
-	font-family: source-sans-pro;
+	clear: left;
+}
+
+h1 
+{
+	font-size: 72px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 h2
 {
-	color: #799998;
+	color: #F0C323;
 	font-style: normal;
-	font-weight: 600;
 	font-family: source-sans-pro;
+	font-size: 24px;
+}
+
+#imagetextbox
+{
+	font-size:14px;
 }
 
 #main 
@@ -37,6 +60,11 @@ h2
 	width: 58%;
 	margin-left: 2%;
 	float: left;
+}
+
+p
+{
+	font-size: 14px;
 }
 
 #sidebar 
@@ -58,15 +86,16 @@ h2
 
 #imagearticle
 {
-	width: 32%;
+	width: 331px;
 	padding-left: 10px;
 	padding-right: 10px;
 	position: absolute;
-	top: -526px;
-	right: 46px;
+	top: -524px;
+	right: 73px;
 	background-color: #B44B1C;
 	border-radius: 21px;
 	color: #FFFFFF;
+	height: 152px;
 }
 
 a:link 
@@ -134,7 +163,8 @@ a:hover, a:active, a:focus
 	margin:50px;
 }
 
-input{
+input
+{
 	float:right;
 }
 
@@ -143,4 +173,30 @@ form
 	width: 300px;
 }
 
-	
+figure 
+{
+	display: block;
+	width: 420px;
+}
+
+figure img 
+{
+	padding: 10px;
+	-webkit-box-shadow: 1px 1px 15px #B44B1C;
+	box-shadow: 1px 1px 15px #B44B1C;
+}
+
+figcaption 
+{
+	font-size: 0.875em;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	margin-top: 0.5em;
+}
+
+.centered 
+{
+	margin-left: auto;
+	margin-right: auto;
+}
