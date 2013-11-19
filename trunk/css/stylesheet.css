@@ -50,6 +50,13 @@ h2
 	font-size: 24px;
 }
 
+h3
+{
+	color: #B44B1C;
+	font-style: normal;
+	font-size: 18px;
+}
+
 #imagetextbox
 {
 	font-size:14px;
@@ -154,6 +161,7 @@ a:hover, a:active, a:focus
 	background-color: #f9ebae;
 	color: #406472;
 	clear: left;
+	text-align: right;
 }
 
 .orange { color:#F90 }
