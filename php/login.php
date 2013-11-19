@@ -10,13 +10,13 @@ $password = $_POST["password"];
 
 if($email&&$password)
 {
-	$abfrage = "SELECT email, password FROM customer WHERE email LIKE '$email' LIMIT 1";
+	$abfrage = "SELECT id, email, password FROM customer WHERE email LIKE '$email' LIMIT 1";
 	$ergebnis = mysql_query($abfrage);
 	$row = mysql_fetch_object($ergebnis);
 	
 	if($row->password == $password && $row->email == $email)
     {
-		$_SESSION["email"] = $email;
+		$_SESSION["id"] = $row->id;
     	header("location:login_success.html");
     }
 	else
