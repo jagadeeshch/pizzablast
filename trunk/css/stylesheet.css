@@ -176,6 +176,11 @@ input
 	float:right;
 }
 
+textarea
+{
+	float:right;
+}
+
 form
 {
 	width: 300px;
