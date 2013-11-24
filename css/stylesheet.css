@@ -304,7 +304,7 @@ p a
 
 #footer div ul li div span {
 	background: url(../images/bg-heading.jpg) no-repeat;
-	color: #2f9a18;
+	color: #C00;
 	display: block;
 	font-size: 24px;
 	font-weight: bold;
@@ -360,7 +360,7 @@ p a
 }
 
 #footer div.section div p {
-	color: #809b58;
+	color: #E7D186;
 	float: left;
 	font-family: Trebuchet MS;
 	font-size: 10px;
@@ -369,7 +369,7 @@ p a
 }
 
 #footer div.section div div {
-	color: #809d5d;
+	color: #E9D68C;
 	float: right;
 	font-size: 16px;
 	padding: 10px 0 0;
