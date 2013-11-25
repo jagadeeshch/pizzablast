@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'></meta>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge"></meta>
+    <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/dev/x3dom.css" />
+    <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+
+    <script>
+
+
+	//Noch zu implementieren: einen Counter, der die ID hochz‰hlt, damit die Zutaten eindeutig identifizierbar sind.
+	//						  auﬂerdem verhindern, dass die Salami hinter der Pizza landet
+	//						  verhindern, dass die Salami die Pizza verl‰sst
+	//
+	  function addNode()
+	    {
+	 		var meinTransform = document.createElement('Transform');
+	 		meinTransform.setAttribute('id','salami_tOuter');
+	 		meinTransform.setAttribute('DEF','salami_tOuter');
+
+	 		var meinInline = document.createElement('Inline');
+	 		meinInline.setAttribute('url','salami.x3d');
+	 		meinInline.setAttribute('id','salami_inline');
+	 		meinInline.setAttribute('DEF','salami_inline');
+
+	        var ot = document.getElementById('scene');
+	        meinTransform.appendChild(meinInline);
+	        ot.appendChild(meinTransform);
+
+	       	var greenBox = document.getElementById("salami_tOuter");
+	       	alert(greenBox);
+
+	        greenBox.addEventListener('mousedown', start, false);
+
+	        var mvbl = new x3dom.Moveable(boxes, greenBox, moveCallback, 0);
+
+
+	        return false;
+	     };
+
+
+	    // the x3dom runtime object
+	    var drag = false;
+
+	    // on button press
+	    function start(event)
+	    {
+	        if (!drag)
+			{
+	            drag = true;
+	        }
+	    }
+
+	    // on mouse move
+	    function moveCallback(elem, trans)
+	    {
+	        document.getElementById('moveEvent').innerHTML = "Move " + elem.id + ": [" + trans + "]";
+	    }
+
+	    // some inits to attach listeners etc.
+
+
+	    document.onload = function()
+	    {
+	        var boxes = document.getElementById("boxes");
+
+	        boxes.addEventListener('mouseup', stop, false);
+
+	        //var greenBox = document.getElementById("box_2_id");
+
+	        //greenBox.addEventListener('mousedown', start, false);
+
+	        // Moveable wrapper requires x3dom-full.js, its signature is:
+	        // x3dom.Moveable(x3domElement, transformNode, callback, snapToGridSize)
+	        var mvbl = new x3dom.Moveable(boxes, greenBox, moveCallback, 0);
+
+	    }
+  </script>
+  </head>
+
+  <body style="background-color:#e6be5d">
+
+  <input type="button" id="but" value="Hinzuf&uuml;gen" onclick="addNode();"> </input><br />
+
+	  <x3d id='boxes' DEF='boxes' showStat='false' showLog='false' style='width:500px; height:500px; border:0; margin:0; padding:0;'>
+       <scene id="scene" DEF='scene'>
+			<inline  id='inline_element' url='text.x3d' ></inline>
+			<!-- hier hin -->
+		<scene>
+	</x3d>
+
+  </body>
+</html>
