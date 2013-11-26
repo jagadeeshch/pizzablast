@@ -10,42 +10,78 @@
         <link rel="stylesheet" href="css/stylesheet.css" type="text/css" media="screen"/>
 		<title>Erstelle Deine eigene Pizza!</title>
 
-		<script type="text/javascript">
+		 <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+		 <script>
 
 
-		 	 function addNode()
-		     {
-		 		var c = document.createElement('scene');
-		 		var b = document.createElement('Inline');
-		 		b.setAttribute('url','salami.x3d');
-		         c.appendChild(b);
-		         var ot = document.getElementById('next');
-		         ot.appendChild(c);
+			//Noch zu implementieren: einen Counter, der die ID hochz‰hlt, damit die Zutaten eindeutig identifizierbar sind.
+			//						  auﬂerdem verhindern, dass die Salami hinter der Pizza landet
+			//						  verhindern, dass die Salami die Pizza verl‰sst
+			//
+			  function addNode()
+			    {
+			 		var meinTransform = document.createElement('Transform');
+			 		meinTransform.setAttribute('id','salami_tOuter');
+			 		meinTransform.setAttribute('DEF','salami_tOuter');
 
-		         return false;
-		     };
+			 		var meinInline = document.createElement('Inline');
+			 		meinInline.setAttribute('url','salami.x3d');
+			 		meinInline.setAttribute('id','salami_inline');
+			 		meinInline.setAttribute('DEF','salami_inline');
 
-		 	function removeNode()
-		     {
-		         var ot = document.getElementById('next');
-		         for (var i = 0; i <= ot.childNodes.length; i++)
-		         {
-		         	if (ot.childNodes[i].nodeType === Node.ELEMENT_NODE) 
+			        var ot = document.getElementById('scene');
+			        meinTransform.appendChild(meinInline);
+			        ot.appendChild(meinTransform);
+
+			       	var greenBox = document.getElementById("salami_tOuter");
+			       	//alert(greenBox);
+
+			        greenBox.addEventListener('mousedown', start, false);
+
+			        var mvbl = new x3dom.Moveable(boxes, greenBox, moveCallback, 0);
+
+
+			        return false;
+			     };
+
+
+			    // the x3dom runtime object
+			    var drag = false;
+
+			    // on button press
+			    function start(event)
+			    {
+			        if (!drag)
 					{
-		         		ot.removeChild(ot.childNodes[i]);
-		   				break;
-		   			}
-		   		}
+			            drag = true;
+			        }
+			    }
 
-		         return false;
-		     };
+			    // on mouse move
+			    function moveCallback(elem, trans)
+			    {
+			        document.getElementById('moveEvent').innerHTML = "Move " + elem.id + ": [" + trans + "]";
+			    }
 
-		     function changeTexture(tex)
-		     {
-		     	document.getElementById('my_tex').setAttribute("url", tex);
-		     }
+			    // some inits to attach listeners etc.
 
-			</script>
+
+			    document.onload = function()
+			    {
+			        var boxes = document.getElementById("boxes");
+
+			        boxes.addEventListener('mouseup', stop, false);
+
+			        //var greenBox = document.getElementById("box_2_id");
+
+			        //greenBox.addEventListener('mousedown', start, false);
+
+			        // Moveable wrapper requires x3dom-full.js, its signature is:
+			        // x3dom.Moveable(x3domElement, transformNode, callback, snapToGridSize)
+			        var mvbl = new x3dom.Moveable(boxes, greenBox, moveCallback, 0);
+
+			    }
+  </script>
 
 	</head>
 
@@ -66,19 +102,23 @@
                     </ul>
                 </nav>
 
-                <x3d id='someUniqueId' showStat='false' id="test" showLog='false' x='0px' y='0px' width='1000px' height='750'>
-					      <scene id="next">
+
+				  <input type="button" id="but" value="Hinzuf&uuml;gen" onclick="addNode();"> </input><br />
+
+					  <x3d id='boxes' DEF='boxes' showStat='false' showLog='false' style='width:500px; height:500px; border:0; margin:0; padding:0;'>
+				       <scene id="scene" DEF='scene'>
 							<inline  id='inline_element' url='text.x3d' ></inline>
-					      <scene>
-				 </x3d>
-						<input type="button" id="but" value="Hinzuf&uuml;gen" onclick="addNode();"> </input><br />
-						<input type="button" id="but" value="Entfernen" onclick="removeNode();"> </input><br />
+							<!-- hier hin -->
+						<scene>
+					</x3d>
+
+						<!--<input type="button" id="but" value="Entfernen" onclick="removeNode();"> </input><br />
 
 						<img width="10%" src="miau.jpg" onclick="changeTexture('miau.jpg');" style="cursor:pointer;" border="1">
 						<br />
 						<img width="10%" src="fladenbrottextur_512.jpg" onclick="changeTexture('fladenbrottextur_512.jpg');" style="cursor:pointer;" border="1">
 						<br />
-						<img width="10%" src="salami.jpg" onclick="changeTexture('salami.jpg');" style="cursor:pointer;" border="1">
+						<img width="10%" src="salami.jpg" onclick="changeTexture('salami.jpg');" style="cursor:pointer;" border="1">-->
             </div>
             </body>
 </html>
