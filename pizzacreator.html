@@ -44,10 +44,33 @@
 			     };
 
 
-			    // the x3dom runtime object
+
+			     function addNode2()
+				 {
+				 	var meinTransform1 = document.createElement('Transform');
+				 	meinTransform1.setAttribute('id','schinken_tOuter');
+				 	meinTransform1.setAttribute('DEF','schinken_tOuter');
+
+				 	var meinInline1 = document.createElement('Inline');
+				 	meinInline1.setAttribute('url','schinken.x3d');
+				 	meinInline1.setAttribute('id','schinken_inline');
+				 	meinInline1.setAttribute('DEF','schinken_inline');
+
+				 	var ot1 = document.getElementById('scene');
+				 	meinTransform1.appendChild(meinInline1);
+				 	ot1.appendChild(meinTransform1);
+
+				 	var redBox = document.getElementById("schinken_tOuter");
+
+				 	redBox.addEventListener('mousedown', start, false);
+
+				 	var mvbl1 = new x3dom.Moveable(boxes, redBox, moveCallback, 0);
+
+				 	return false;
+			     };
+
 			    var drag = false;
 
-			    // on button press
 			    function start(event)
 			    {
 			        if (!drag)
@@ -62,8 +85,6 @@
 			        document.getElementById('moveEvent').innerHTML = "Move " + elem.id + ": [" + trans + "]";
 			    }
 
-			    // some inits to attach listeners etc.
-
 
 			    document.onload = function()
 			    {
@@ -71,14 +92,8 @@
 
 			        boxes.addEventListener('mouseup', stop, false);
 
-			        //var greenBox = document.getElementById("box_2_id");
-
-			        //greenBox.addEventListener('mousedown', start, false);
-
-			        // Moveable wrapper requires x3dom-full.js, its signature is:
-			        // x3dom.Moveable(x3domElement, transformNode, callback, snapToGridSize)
 			        var mvbl = new x3dom.Moveable(boxes, greenBox, moveCallback, 0);
-
+			        var mvbl1 = new x3dom.Moveable(boxes, redBox, moveCallback, 0);
 			    }
   </script>
 
@@ -102,7 +117,9 @@
                 </nav>
 
 
-				  <input type="button" id="but" value="Hinzuf&uuml;gen" onclick="addNode();"> </input><br />
+				  <input type="button" id="but" value="Hinzuf&uuml;gen Salami" onclick="addNode();"> </input><br />
+				  <input type="button" id="but" value="Hinzuf&uuml;gen Schinken" onclick="addNode2();"> </input><br />
+
 
 					  <x3d id='boxes' DEF='boxes' showStat='false' showLog='false' style='width:500px; height:500px; border:0; margin:0; padding:0;'>
 				       <scene id="scene" DEF='scene'>
