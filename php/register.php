@@ -1,14 +1,14 @@
 <?php
-$verbindung = mysql_connect("localhost", "root" , "")
+$verbindung = mysql_connect("localhost", "web53" , "lostinfulda")
 or die("Verbindung zur Datenbank konnte nicht hergestellt werden");
 
-mysql_select_db("") or die ("Datenbank konnte nicht ausgewählt werden");
+mysql_select_db("usr_web53_1") or die ("Datenbank konnte nicht ausgewählt werden");
 
 $email = $_POST["email"];
 $password = $_POST["password"];
 $password2 = $_POST["password2"];
 
-$webmaster = '';
+$webmaster = 'to_be@gmx.de';
 $emailBetreff = 'Herzlich Willkommen bei Pizza Creator!';
 
 $body = <<<EOD
