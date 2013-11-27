@@ -94,7 +94,20 @@ p a
 	z-index: -1;
 }
 
-#content {
+#content span 
+{
+	
+	display: block;
+	height: 628px;
+	left: 0;
+	overflow: hidden;
+    position: relative;
+    top: 0;
+	z-index: -1;
+}
+
+#content 
+{
 	height: auto;
 	margin: -50px auto 0;
 	padding: 0;
@@ -103,7 +116,8 @@ p a
     z-index: 1;
 }
 
-#content h1 {
+#content h1 
+{
 	color: #fdfbfc;
 	font-size: 36px;
     line-height: 28px;
@@ -112,24 +126,28 @@ p a
 	text-shadow: 1px 1px 0 #81ae53;
 }
 
-#content p, #content div p {
+#content p, #content div p 
+{
 	line-height: 27px;
 	padding: 0 10px;
 	text-align: justify;
 	text-shadow: 1px 1px 0 #c3e49f;
 }
 
-#content div {
+#content div 
+{
 	margin-top: 90px;
 }
 
-#content div b {
+#content div b 
+{
 	display: block;
 	padding: 20px 10px 0;
 	text-shadow: 1px 1px 0 #d5f1b1;
 }
 
-#content div div {
+#content div div 
+{
 	height: 350px;
     margin: 0 0 35px;
     overflow: hidden;
@@ -137,7 +155,8 @@ p a
     width: auto;
 }
 
-#content div div div {
+#content div div div 
+{
 	border: none;
 	float: left;
 	height: auto;
@@ -146,14 +165,16 @@ p a
 	width: 535px;
 }
 
-#content div div span {
+#content div div span 
+{
 	background: url(../images/bg-blog-image.jpg) no-repeat;
 	float: right;
 	height: 350px;
 	width: 403px;
 }
 
-#content div div span img {
+#content div div span img 
+{
 	margin: 6px;
 }
 
@@ -166,12 +187,14 @@ p a
 	width: auto;  
 }
 
-#content div div div p {
+#content div div div p 
+{
 	padding: 0 20px 0 10px;
 	text-align: left;
 }
 
-#content div div.section {
+#content div div.section 
+{
 	background: url(../images/bg-food-menu.jpg) no-repeat;
 	height: 346px;
 }
