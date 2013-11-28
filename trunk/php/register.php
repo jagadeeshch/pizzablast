@@ -28,7 +28,7 @@ EOD;
 
 if($email&&$password&&$password2)
 {
-	if(filter_var($email, FILTER_VALIDATE_EMAIL)&&$password==$password2)
+	if($password==$password2)
 	{
 		$result = mysql_query("SELECT customerid FROM customer WHERE email LIKE '$email'");
 		$menge = mysql_num_rows($result);
