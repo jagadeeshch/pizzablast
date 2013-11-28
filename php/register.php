@@ -12,23 +12,23 @@ $webmaster = 'to_be@gmx.de';
 $emailBetreff = 'Herzlich Willkommen bei Pizza Creator!';
 
 $body = <<<EOD
-Herlich Willkommen bei Pizza Creator!
+Herzlich Willkommen bei Pizza Creator!
 Ihre Registrierung war erfolgreich.
-Genießen Sie jetzt ihre wundervollen und außergwöhnlichen Pizza Kreationen!
-Egal was Sie sich auf Ihrer Pizza wünschen, bei UNS bekommen Sie es.
+Geniessen Sie jetzt ihre wundervollen und aussergwoehnlichen Pizza Kreationen!
+Egal was Sie sich auf Ihrer Pizza wuenschen, bei UNS bekommen Sie es.
 
-Sie können sich nun auf unserer Webseite einloggen.
-Benutzen Sie dafür Ihre E-Mail Adresse, mit der Sie sich registriert haben und Ihr ausgewähltes Passwort.
+Sie koennen sich nun auf unserer Webseite einloggen.
+Benutzen Sie dafuer Ihre E-Mail Adresse, mit der Sie sich registriert haben und Ihr ausgewaehltes Passwort.
 
 Zur Erinnerung: Ihr Passwort lautet $password
 
-Wenn Sie möchten, speichern Sie doch Ihre außergewöhnlichen Pizza Kreationen, und rufen Sie diese (sofern gewünscht) bei Ihrer nächsten
+Wenn Sie moechten, speichern Sie doch Ihre außergewoehnlichen Pizza Kreationen, und rufen Sie diese (sofern gewuenscht) bei Ihrer naechsten
 Bestellung einfach wieder ab.
 EOD;
 
 if($email&&$password&&$password2)
 {
-	if($password==$password2)
+	if(filter_var($email, FILTER_VALIDATE_EMAIL)&&$password==$password2)
 	{
 		$result = mysql_query("SELECT customerid FROM customer WHERE email LIKE '$email'");
 		$menge = mysql_num_rows($result);
