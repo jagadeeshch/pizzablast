@@ -1,7 +1,7 @@
 <x3d id='x3dElement' showStat='false' showLog='false' style='width:100%; height:100%; border:0; margin:0; padding:0;'>
        <scene DEF='scene'>
               <worldInfo info='"VRML2.0 created with Version 1.3, from Alias Maya 2012 x64"' title='blubb3'></worldInfo>
-              <navigationInfo type='"any"'></navigationInfo>
+              <navigationInfo id="navi" def="navi" type="any"></navigationInfo>
               <group>
                 <viewpoint DEF='persp' description='persp' orientation='0.090931 0.98474 0.148386 4.2275' position='-27.3286 8 -14.9246' fieldOfView='0.950022'></viewpoint>
                 <transform DEF='pCylinder1' rotation='5.5 -10 -10 5.14159' scale='-14.675775 -0.5984825 -14.675775'>

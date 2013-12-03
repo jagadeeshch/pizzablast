@@ -16,169 +16,167 @@
 			//						  ausserdem verhindern, dass die Salami hinter der Pizza landet
 			//						  verhindern, dass die Salami die Pizza verlaesst
 
+			var counter = 1;
+
 			  function hinzufuegen(val)
 			    {
 					if(val == 'Salami')
 					{
 						var meinTransform = document.createElement('Transform');
-						meinTransform.setAttribute('id','salami_tOuter');
-						meinTransform.setAttribute('DEF','salami_tOuter');
+						meinTransform.setAttribute('id','salami_tOuter'+counter);
 
 						var meinInline = document.createElement('Inline');
 						meinInline.setAttribute('url','salami.x3d');
-						meinInline.setAttribute('id','salami_inline');
-						meinInline.setAttribute('DEF','salami_inline');
+
+
+						meinInline.setAttribute('id','salami_inline'+counter);
+						//meinInline.setAttribute('DEF','salami_inline');
 
 						var ot = document.getElementById('scene');
 						meinTransform.appendChild(meinInline);
 						ot.appendChild(meinTransform);
 
-						var greenBox = document.getElementById("salami_tOuter");
+						var greenBox = document.getElementById("salami_tOuter"+counter);
 
 						greenBox.addEventListener('mousedown', start, false);
 
 						var mvbl = new x3dom.Moveable(boxes, greenBox, moveCallback, 0);
 
+						counter++;
 						return false;
 					}
 					else if(val == 'Schinken')
 					{
 						var meinTransform1 = document.createElement('Transform');
-						meinTransform1.setAttribute('id','schinken_tOuter');
-						meinTransform1.setAttribute('DEF','schinken_tOuter');
+						meinTransform1.setAttribute('id','schinken_tOuter'+counter);
 
 						var meinInline1 = document.createElement('Inline');
 						meinInline1.setAttribute('url','schinken.x3d');
-						meinInline1.setAttribute('id','schinken_inline');
-						meinInline1.setAttribute('DEF','schinken_inline');
+						meinInline1.setAttribute('id','schinken_inline'+counter);
 
 						var ot1 = document.getElementById('scene');
 						meinTransform1.appendChild(meinInline1);
 						ot1.appendChild(meinTransform1);
 
-						var redBox = document.getElementById("schinken_tOuter");
+						var redBox = document.getElementById("schinken_tOuter"+counter);
 
 						redBox.addEventListener('mousedown', start, false);
 
 						var mvbl1 = new x3dom.Moveable(boxes, redBox, moveCallback, 0);
 
+						counter++;
 						return false;
 					}
 
 					else if(val == 'Olive')
 					{
 						var meinTransform5 = document.createElement('Transform');
-						meinTransform5.setAttribute('id','olive_tOuter');
-						meinTransform5.setAttribute('DEF','olive_tOuter');
+						meinTransform5.setAttribute('id','olive_tOuter'+counter);
 
 						var meinInline5 = document.createElement('Inline');
 						meinInline5.setAttribute('url','olive.x3d');
-						meinInline5.setAttribute('id','olive_inline');
-						meinInline5.setAttribute('DEF','olive_inline');
+						meinInline5.setAttribute('id','olive_inline'+counter);
 
 						var ot5 = document.getElementById('scene');
 						meinTransform5.appendChild(meinInline5);
 						ot5.appendChild(meinTransform5);
 
-						var whiteBox = document.getElementById("olive_tOuter");
+						var whiteBox = document.getElementById("olive_tOuter"+counter);
 
 						whiteBox.addEventListener('mousedown', start, false);
 
 						var mvbl5 = new x3dom.Moveable(boxes, whiteBox, moveCallback, 0);
 
+						counter++;
 						return false;
 					}
 				/*	else if(val == 'Pilz')
 					{
 						var meinTransform2 = document.createElement('Transform');
-						meinTransform2.setAttribute('id','pilze_tOuter');
-						meinTransform2.setAttribute('DEF','pilze_tOuter');
+						meinTransform2.setAttribute('id','pilze_tOuter'+counter);
 
 						var meinInline2 = document.createElement('Inline');
 						meinInline2.setAttribute('url','pilze.x3d');
-						meinInline2.setAttribute('id','pilze_inline');
-						meinInline2.setAttribute('DEF','pilze_inline');
+						meinInline2.setAttribute('id','pilze_inline'+counter);
 
 						var ot2 = document.getElementById('scene');
 						meinTransform2.appendChild(meinInline2);
 						ot2.appendChild(meinTransform2);
 
-						var lilaBox = document.getElementById("pilze_tOuter");
+						var lilaBox = document.getElementById("pilze_tOuter"+counter);
 
 						lilaBox.addEventListener('mousedown', start, false);
 
 						var mvbl2 = new x3dom.Moveable(boxes, lilaBox, moveCallback, 0);
 
+						counter++;
 						return false;
 					}
 			 		else if(val == 'Tomate')
 					{
 						var meinTransform3 = document.createElement('Transform');
-						meinTransform3.setAttribute('id','tomate_tOuter');
-						meinTransform3.setAttribute('DEF','tomate_tOuter');
+						meinTransform3.setAttribute('id','tomate_tOuter'+counter);
 
 						var meinInline3 = document.createElement('Inline');
 						meinInline3.setAttribute('url','tomate.x3d');
-						meinInline3.setAttribute('id','tomate_inline');
-						meinInline3.setAttribute('DEF','tomate_inline');
+						meinInline3.setAttribute('id','tomate_inline'+counter);
 
 						var ot3 = document.getElementById('scene');
 						meinTransform3.appendChild(meinInline3);
 						ot3.appendChild(meinTransform3);
 
-						var blueBox = document.getElementById("tomate_tOuter");
+						var blueBox = document.getElementById("tomate_tOuter"+counter);
 
 						blueBox.addEventListener('mousedown', start, false);
 
 						var mvbl3 = new x3dom.Moveable(boxes, blueBox, moveCallback, 0);
 
+						counter++;
 						return false;
 					}
 					else if(val == 'K&auml;se')
 					{
 						var meinTransform4 = document.createElement('Transform');
-						meinTransform4.setAttribute('id','kaese_tOuter');
-						meinTransform4.setAttribute('DEF','kaese_tOuter');
+						meinTransform4.setAttribute('id','kaese_tOuter'+counter);
 
 						var meinInline4 = document.createElement('Inline');
 						meinInline4.setAttribute('url','kaese.x3d');
-						meinInline4.setAttribute('id','kaese_inline');
-						meinInline4.setAttribute('DEF','kaese_inline');
+						meinInline4.setAttribute('id','kaese_inline'+counter);
 
 						var ot4 = document.getElementById('scene');
 						meinTransform4.appendChild(meinInline4);
 						ot4.appendChild(meinTransform4);
 
-						var greyBox = document.getElementById("kaese_tOuter");
+						var greyBox = document.getElementById("kaese_tOuter"+counter);
 
 						greyBox.addEventListener('mousedown', start, false);
 
 						var mvbl4 = new x3dom.Moveable(boxes, greyBox, moveCallback, 0);
 
+						counter++;
 						return false;
 					}
 
 					else if(val == 'Spinat')
 					{
 						var meinTransform6 = document.createElement('Transform');
-						meinTransform6.setAttribute('id','spinat_tOuter');
-						meinTransform6.setAttribute('DEF','spinat_tOuter');
+						meinTransform6.setAttribute('id','spinat_tOuter'+counter);
 
 						var meinInline6 = document.createElement('Inline');
 						meinInline6.setAttribute('url','spinat.x3d');
-						meinInline6.setAttribute('id','spinat_inline');
-						meinInline6.setAttribute('DEF','spinat_inline');
+						meinInline6.setAttribute('id','spinat_inline'+counter);
 
 						var ot6 = document.getElementById('scene');
 						meinTransform6.appendChild(meinInline6);
 						ot6.appendChild(meinTransform6);
 
-						var brownBox = document.getElementById("spinat_tOuter");
+						var brownBox = document.getElementById("spinat_tOuter"+counter);
 
 						brownBox.addEventListener('mousedown', start, false);
 
 						var mvbl6 = new x3dom.Moveable(boxes, brownBox, moveCallback, 0);
 
+						counter++;
 						return false;
 					}
 					else if(val == 'Thunfisch')
@@ -468,7 +466,17 @@
 					var mvbl14 = new x3dom.Moveable(boxes, pointedBox, moveCallback, 0);
 					var mvbl15 = new x3dom.Moveable(boxes, darkbrownBox, moveCallback, 0);
 					var mvbl16 = new x3dom.Moveable(boxes, lightbrownBox, moveCallback, 0);*/
-			    }
+
+				}
+
+				function viewPointChange()
+				{
+						//hier soll NONE auf ANY gesetzt werden
+						alert("wechsel!");
+						var nichtBewegen = "NONE";
+						document.getElementById('navi').setAttribute("type", nichtBewegen);
+				}
+
   </script>
 </head>
 
@@ -494,7 +502,7 @@
 
 					  <x3d id='boxes' DEF='boxes' showStat='false' showLog='false' style='width:500px; height:500px; border:0; margin:0; padding:0;'>
 				       <scene id="scene" DEF='scene'>
-							<inline  id='inline_element' url='text.x3d' ></inline>
+							<inline  id='inline_element' url='text.x3d' mapDefToId="true" nameSpaceName="text"></inline>
 							<!-- hier hin -->
 						<scene>
 					</x3d>
@@ -529,7 +537,8 @@
 
 				<br /><br />K&auml;se<br />
 					<input type="button" id="but16" value="Mozzarella" onclick="hinzufuegen(this.form.but16.value);"> </input><br />
-					<input type="button" id="but5" value="K&auml;se" onclick="hinzufuegen(this.form.but5.value);"> </input><br />
+					<input type="button" id="but5" value="K&auml;se" onclick="hinzufuegen(this.form.but5.value);"> </input><br /><br />
+					<input type="button" id="fertig" value="fertig" onclick="viewPointChange();"> </input><br />
 				</form>
 		</p>
 	<span></span>
