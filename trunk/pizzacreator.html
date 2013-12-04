@@ -12,9 +12,9 @@
 <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
 		 <script>
 
-			//Noch zu implementieren: einen Counter, der die ID hochzaehlt, damit die Zutaten eindeutig identifizierbar sind.
-			//						  ausserdem verhindern, dass die Salami hinter der Pizza landet
+			//Noch zu implementieren:  ausserdem verhindern, dass die Salami hinter der Pizza landet
 			//						  verhindern, dass die Salami die Pizza verlaesst
+			//						 Textur wechseln einbauen
 
 			var counter = 1;
 
@@ -30,7 +30,6 @@
 
 
 						meinInline.setAttribute('id','salami_inline'+counter);
-						//meinInline.setAttribute('DEF','salami_inline');
 
 						var ot = document.getElementById('scene');
 						meinTransform.appendChild(meinInline);
@@ -463,8 +462,7 @@
 				{
 						//hier soll NONE auf ANY gesetzt werden
 						alert("wechsel!");
-						var nichtBewegen = "NONE";
-						document.getElementById('navi').setAttribute("type", nichtBewegen);
+						document.getElementById('test1__navi').setAttribute("type", "ANY");
 				}
 
   </script>
@@ -492,7 +490,7 @@
 
 					  <x3d id='boxes' DEF='boxes' showStat='false' showLog='false' style='width:500px; height:500px; border:0; margin:0; padding:0;'>
 				       <scene id="scene" DEF='scene'>
-							<inline  id='inline_element' url='text.x3d' mapDefToId="true" nameSpaceName="text"></inline>
+							<inline  id='inline_element' url='text.x3d' nameSpaceName='test1' mapDefToId='true' ></inline>
 							<!-- hier hin -->
 						<scene>
 					</x3d>
@@ -528,7 +526,8 @@
 				<br /><br />K&auml;se<br />
 					<input type="button" id="but16" value="Mozzarella" onclick="hinzufuegen(this.form.but16.value);"> </input><br />
 					<input type="button" id="but5" value="K&auml;se" onclick="hinzufuegen(this.form.but5.value);"> </input><br /><br />
-					<input type="button" id="fertig" value="fertig" onclick="viewPointChange();"> </input><br />
+					<input type="button" id="fertig" value="Pizza-Beweg-Ansicht" onclick="viewPointChange();"> </input><br />
+					<input type="button" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange();"> </input><br />
 				</form>
 		</p>
 	<span></span>

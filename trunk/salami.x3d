@@ -2,9 +2,8 @@
       <scene id="salami" DEF='salami'>
         <navigationInfo type='"NONE"'></navigationInfo>
         <group>
-         <viewpoint id="aView" DEF='persp' description='persp' orientation='0.090931 0.98474 0.148386 4.2275' position='-27.3286 7 -13.9246' fieldOfView='0.950022'></viewpoint>
           <transform id="salami_trans" DEF='salami_trans'>
-          <transform DEF='box_2_2_id' rotation='4.5 -10 -10 5.14159' scale='2.8801 0.068875 2.8801' translation='-0.56856 0.022067 0'
+          <transform DEF='box_2_2_id' rotation='10 0 1 1.57' scale='2.8801 0.068875 2.8801' translation='-0.56856 0.022067 0'
 	  		onmouseover="document.getElementById('mouseOverEvent').innerHTML='Mouse: over - draggable';"
 			onmouseout= "document.getElementById('mouseOverEvent').innerHTML='Mouse: out';">
             <shape>
