@@ -463,8 +463,14 @@
 						//hier soll NONE auf ANY gesetzt werden
 						//alert("wechsel!");
 						document.getElementById('test1__navi').setAttribute("type", "ANY");
+						//Moveable muss deaktiviert werden
+				}
 
-
+				function viewPointChange2()
+				{
+					document.getElementById('test1__navi').setAttribute("type", "NONE");
+					//Viewpoint muss noch auf die Ursprungsdaten gesetzt werden
+					//Moveable muss aktiviert werden
 				}
 
   </script>
@@ -529,7 +535,7 @@
 					<input type="button" id="but16" value="Mozzarella" onclick="hinzufuegen(this.form.but16.value);"> </input><br />
 					<input type="button" id="but5" value="K&auml;se" onclick="hinzufuegen(this.form.but5.value);"> </input><br /><br />
 					<input type="button" id="fertig" value="Pizza-Beweg-Ansicht" onclick="viewPointChange();"> </input><br />
-					<input type="button" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange();"> </input><br />
+					<input type="button" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange2();"> </input><br />
 				</form>
 		</p>
 	<span></span>
