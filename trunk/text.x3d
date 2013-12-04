@@ -4,7 +4,7 @@
               <navigationInfo id="navi" DEF="navi" type="none"></navigationInfo>
               <group>
                 <viewpoint DEF='persp' description='persp' orientation='0 0 0 0' position='0 0 30' fieldOfView='1'></viewpoint>
-                <transform DEF='pCylinder1' rotation='10 0 1 1.57' scale='-14.675775 -0.5984825 -14.675775'>
+                <transform DEF='pCylinder1' rotation='100 0 0 1.57' scale='-14.675775 -0.5984825 -14.675775'>
                   <shape>
                     <appearance>
                       <material DEF='lambert2_0' diffuseColor='0 0 0' shininess='0'></material>
