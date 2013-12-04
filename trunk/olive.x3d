@@ -16,9 +16,9 @@
 		            skyColor="0.051 0.051 0.051"
 		            />
 		<Transform DEF="olive_trans"
-		           translation="0.000000 0.000000 0.000000"
+		           translation="0.000000 0.000000 0.800000"
 		           scale="0.792762 0.714043 1.000000"
-		           rotation="0.000000 0.707107 0.707107 3.141593"
+		           rotation="100 0 0 1.57"
 		           onmouseover="document.getElementById('mouseOverEvent').innerHTML='Mouse: over - draggable';"
 					onmouseout= "document.getElementById('mouseOverEvent').innerHTML='Mouse: out';">
 			<Transform DEF="Plane_ifs_TRANSFORM"
