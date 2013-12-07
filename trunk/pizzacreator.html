@@ -89,6 +89,53 @@
 						counter++;
 						return false;
 					}
+					
+					else if(val == 'Tomate')
+					{
+						var meinTransform3 = document.createElement('Transform');
+						meinTransform3.setAttribute('id','tomate_tOuter'+counter);
+
+						var meinInline3 = document.createElement('Inline');
+						meinInline3.setAttribute('url','tomate.x3d');
+						meinInline3.setAttribute('id','tomate_inline'+counter);
+
+						var ot3 = document.getElementById('scene');
+						meinTransform3.appendChild(meinInline3);
+						ot3.appendChild(meinTransform3);
+
+						var blueBox = document.getElementById("tomate_tOuter"+counter);
+
+						blueBox.addEventListener('mousedown', start, false);
+
+						var mvbl3 = new x3dom.Moveable(boxes, blueBox, moveCallback, 0);
+
+						counter++;
+						return false;
+					}
+					
+					else if(val == 'Ananas')
+					{
+						var meinTransform8 = document.createElement('Transform');
+						meinTransform8.setAttribute('id','ananas_tOuter'+counter);
+
+						var meinInline8 = document.createElement('Inline');
+						meinInline8.setAttribute('url','ananas.x3d');
+						meinInline8.setAttribute('id','ananas_inline'+counter);
+
+						var ot8 = document.getElementById('scene');
+						meinTransform8.appendChild(meinInline8);
+						ot8.appendChild(meinTransform8);
+
+						var cyanBox = document.getElementById("ananas_tOuter"+counter);
+
+						cyanBox.addEventListener('mousedown', start, false);
+
+						var mvbl8 = new x3dom.Moveable(boxes, cyanBox, moveCallback, 0);
+
+						counter++;
+						return false;
+					}
+					
 				/*	else if(val == 'Pilz')
 					{
 						var meinTransform2 = document.createElement('Transform');
@@ -111,28 +158,7 @@
 						counter++;
 						return false;
 					}
-			 		else if(val == 'Tomate')
-					{
-						var meinTransform3 = document.createElement('Transform');
-						meinTransform3.setAttribute('id','tomate_tOuter'+counter);
-
-						var meinInline3 = document.createElement('Inline');
-						meinInline3.setAttribute('url','tomate.x3d');
-						meinInline3.setAttribute('id','tomate_inline'+counter);
-
-						var ot3 = document.getElementById('scene');
-						meinTransform3.appendChild(meinInline3);
-						ot3.appendChild(meinTransform3);
-
-						var blueBox = document.getElementById("tomate_tOuter"+counter);
-
-						blueBox.addEventListener('mousedown', start, false);
-
-						var mvbl3 = new x3dom.Moveable(boxes, blueBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
+			 		
 					else if(val == 'K&auml;se')
 					{
 						var meinTransform4 = document.createElement('Transform');
@@ -200,28 +226,7 @@
 						counter++;
 						return false;
 					}
-					else if(val == 'Ananas')
-					{
-						var meinTransform8 = document.createElement('Transform');
-						meinTransform8.setAttribute('id','ananas_tOuter'+counter);
-
-						var meinInline8 = document.createElement('Inline');
-						meinInline8.setAttribute('url','ananas.x3d');
-						meinInline8.setAttribute('id','ananas_inline'+counter);
-
-						var ot8 = document.getElementById('scene');
-						meinTransform8.appendChild(meinInline8);
-						ot8.appendChild(meinTransform8);
-
-						var cyanBox = document.getElementById("ananas_tOuter");
-
-						cyanBox.addEventListener('mousedown', start, false);
-
-						var mvbl8 = new x3dom.Moveable(boxes, cyanBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
+					
 					else if(val == 'Mais')
 					{
 						var meinTransform9 = document.createElement('Transform');
@@ -438,15 +443,16 @@
 
 			        boxes.addEventListener('mouseup', stop, false);
 
-			        var mvbl = new x3dom.Moveable(boxes, greenBox, moveCallback, 0);
+			       var mvbl3 = new x3dom.Moveable(boxes, blueBox, moveCallback, 0);
+				   var mvbl = new x3dom.Moveable(boxes, greenBox, moveCallback, 0);
 			        var mvbl1 = new x3dom.Moveable(boxes, redBox, moveCallback, 0);
-					/*var mvbl2 = new x3dom.Moveable(boxes, lilaBox, moveCallback, 0);
-					var mvbl3 = new x3dom.Moveable(boxes, blueBox, moveCallback, 0);
-					var mvbl4 = new x3dom.Moveable(boxes, greyBox, moveCallback, 0); */
-					var mvbl5 = new x3dom.Moveable(boxes, whiteBox, moveCallback, 0);
-					/*var mvbl6 = new x3dom.Moveable(boxes, brownBox, moveCallback, 0);
-					var mvbl7 = new x3dom.Moveable(boxes, yellowBox, moveCallback, 0);
 					var mvbl8 = new x3dom.Moveable(boxes, cyanBox, moveCallback, 0);
+					var mvbl2 = new x3dom.Moveable(boxes, lilaBox, moveCallback, 0);
+					
+				/*	var mvbl4 = new x3dom.Moveable(boxes, greyBox, moveCallback, 0); 
+					var mvbl5 = new x3dom.Moveable(boxes, whiteBox, moveCallback, 0);
+					var mvbl6 = new x3dom.Moveable(boxes, brownBox, moveCallback, 0);
+					var mvbl7 = new x3dom.Moveable(boxes, yellowBox, moveCallback, 0);
 					var mvbl9 = new x3dom.Moveable(boxes, magentaBox, moveCallback, 0);
 					var mvbl10 = new x3dom.Moveable(boxes, pinkBox, moveCallback, 0);
 					var mvbl11 = new x3dom.Moveable(boxes, orangeBox, moveCallback, 0);
