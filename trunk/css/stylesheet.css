@@ -123,7 +123,7 @@ p a
     line-height: 28px;
 	margin: 0;
 	padding: 0 10px;
-	text-shadow: 1px 1px 0 #81ae53;
+	text-shadow: 1px 1px 0 #A08B4A;
 }
 
 #content p, #content div p 
@@ -131,7 +131,7 @@ p a
 	line-height: 27px;
 	padding: 0 10px;
 	text-align: justify;
-	text-shadow: 1px 1px 0 #c3e49f;
+	text-shadow: 1px 1px 0 #E7D186;
 }
 
 #content div 
@@ -171,6 +171,11 @@ p a
 	float: right;
 	height: 350px;
 	width: 403px;
+}
+
+#pizzacreator
+{
+	height: 500px;
 }
 
 #content div div span img 
