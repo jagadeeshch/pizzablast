@@ -12,456 +12,360 @@
 <script type="text/javascript" src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
 		 <script>
 
-			//Noch zu implementieren:  ausserdem verhindern, dass die Salami hinter der Pizza landet
-			//						  verhindern, dass die Salami die Pizza verlaesst
+			//Noch zu implementieren: verhindern, dass die Salami die Pizza verlaesst
 			//						 Textur wechseln einbauen
+			//						 
 
-			var counter = 1;
+			var counter = 1;				//Counter zum vergeben der ID
+			var oldMousePosX = 0;			//Alte X Position der Maus
+			var newMousePosX = 0;			//Neue X Position der Maus
+			var oldMousePosY = 0;   		//Alte Y Position der Maus
+			var newMousePosY = 0;   		//Neue Y Position der Maus
+			var mousedown = false;			//Boolean, um zu schauen, ob die Maus gedrückt ist oder nicht
+			var drag = true;				//Boolean, um zwischen den Ansichten zu wechseln, ob es bewegt werden darf
+			var ID = "null";
+			//var myI = "null"; 
+			
+			/*function meineFunktion(evt)			//OnMouseDown Funktion
+			{
+				if (ID == "null")
+				{
+					oldMousePosX = evt.layerX;
+					oldMousePosY = evt.layerY;
+					mousedown = true;
+					ID = myI;		
+				}
+			}
+			
+			function meineFunktion2(evt)
+			{
 
+				if (myI == ID)
+				{
+					if(drag == true)
+					{
+						if(mousedown == true)
+						{
+							newMousePosX = evt.layerX;
+							document.getElementById('lala').innerHTML="Maus: "+newMousePosX;
+
+							newMousePosY = evt.layerY;
+							var differenz = (newMousePosX - oldMousePosX) / 15 ;
+							var differenzY = (newMousePosY - oldMousePosY) / 15  ;
+	
+							var newId = myI+"__trans";
+
+							var position = document.getElementById(newId).getAttribute("translation");
+							var res = position.split(" ");
+
+							var x = res[0];
+							var y = res[1];
+							var z = res[2];
+
+							var neuX = Number(x);
+							var neuY = Number(y);
+
+							//document.getElementById('lala').innerHTML="Maus: "+oldMousePosX+ " Position: "+neuX+" "+neuY+" "+z+ " mousedown: "+mousedown;
+
+							neuX = neuX + differenz;
+							neuY = neuY - differenzY;
+
+							oldMousePosX = newMousePosX;
+							oldMousePosY = newMousePosY;
+
+							document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
+
+							newMousePosX = 0;
+						}
+					}
+				}
+					document.getElementById('lala').innerHTML="Maus: "+oldMousePosX+ " Position: "+neuX+" "+neuY+" "+z+ " mousedown: "+mousedown + "ID"+ ID;
+			}
+			
+			function meineFunktion3(evt)
+			{
+				mousedown = false;
+				ID = "null";
+			}*/
+			
+			
 			  function hinzufuegen(val)
 			    {
-					if(val == 'Salami')
+					/*if(val == 'Salami')
 					{
 						var meinTransform = document.createElement('Transform');
 						meinTransform.setAttribute('id','salami_tOuter'+counter);
 
 						var meinInline = document.createElement('Inline');
 						meinInline.setAttribute('url','salami.x3d');
-
-
 						meinInline.setAttribute('id','salami_inline'+counter);
+						meinInline.setAttribute('mapDefToId', 'true');
+						meinInline.setAttribute('nameSpaceName', 'salami_tOuter'+counter);
 
 						var ot = document.getElementById('scene');
 						meinTransform.appendChild(meinInline);
 						ot.appendChild(meinTransform);
 
-						var greenBox = document.getElementById("salami_tOuter"+counter);
+						myI = "salami_tOuter"+counter;
+						
 
-						greenBox.addEventListener('mousedown', start, false);
-
-						var mvbl = new x3dom.Moveable(boxes, greenBox, moveCallback, 0);
-
+						document.getElementById(myI).onmousedown = meineFunktion;	//OnMousedown
+						document.getElementById(myI).onmousemove = meineFunktion2;	//OnMouseMove
+						document.getElementById(myI).onmouseup = meineFunktion3;	//OnMouseUp
+						
 						counter++;
 						return false;
-					}
-					else if(val == 'Schinken')
-					{
-						var meinTransform1 = document.createElement('Transform');
-						meinTransform1.setAttribute('id','schinken_tOuter'+counter);
-
-						var meinInline1 = document.createElement('Inline');
-						meinInline1.setAttribute('url','schinken.x3d');
-						meinInline1.setAttribute('id','schinken_inline'+counter);
-
-						var ot1 = document.getElementById('scene');
-						meinTransform1.appendChild(meinInline1);
-						ot1.appendChild(meinTransform1);
-
-						var redBox = document.getElementById("schinken_tOuter"+counter);
-
-						redBox.addEventListener('mousedown', start, false);
-
-						var mvbl1 = new x3dom.Moveable(boxes, redBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-
-					else if(val == 'Olive')
-					{
-						var meinTransform5 = document.createElement('Transform');
-						meinTransform5.setAttribute('id','olive_tOuter'+counter);
-
-						var meinInline5 = document.createElement('Inline');
-						meinInline5.setAttribute('url','olive.x3d');
-						meinInline5.setAttribute('id','olive_inline'+counter);
-
-						var ot5 = document.getElementById('scene');
-						meinTransform5.appendChild(meinInline5);
-						ot5.appendChild(meinTransform5);
-
-						var whiteBox = document.getElementById("olive_tOuter"+counter);
-
-						whiteBox.addEventListener('mousedown', start, false);
-
-						var mvbl5 = new x3dom.Moveable(boxes, whiteBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-
-					else if(val == 'Tomate')
-					{
-						var meinTransform3 = document.createElement('Transform');
-						meinTransform3.setAttribute('id','tomate_tOuter'+counter);
-
-						var meinInline3 = document.createElement('Inline');
-						meinInline3.setAttribute('url','tomate.x3d');
-						meinInline3.setAttribute('id','tomate_inline'+counter);
-
-						var ot3 = document.getElementById('scene');
-						meinTransform3.appendChild(meinInline3);
-						ot3.appendChild(meinTransform3);
-
-						var blueBox = document.getElementById("tomate_tOuter"+counter);
-
-						blueBox.addEventListener('mousedown', start, false);
-
-						var mvbl3 = new x3dom.Moveable(boxes, blueBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-
-					else if(val == 'Ananas')
-					{
-						var meinTransform8 = document.createElement('Transform');
-						meinTransform8.setAttribute('id','ananas_tOuter'+counter);
-
-						var meinInline8 = document.createElement('Inline');
-						meinInline8.setAttribute('url','ananas.x3d');
-						meinInline8.setAttribute('id','ananas_inline'+counter);
-
-						var ot8 = document.getElementById('scene');
-						meinTransform8.appendChild(meinInline8);
-						ot8.appendChild(meinTransform8);
-
-						var cyanBox = document.getElementById("ananas_tOuter"+counter);
-
-						cyanBox.addEventListener('mousedown', start, false);
-
-						var mvbl8 = new x3dom.Moveable(boxes, cyanBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-
-				/*	else if(val == 'Pilz')
-					{
-						var meinTransform2 = document.createElement('Transform');
-						meinTransform2.setAttribute('id','pilze_tOuter'+counter);
-
-						var meinInline2 = document.createElement('Inline');
-						meinInline2.setAttribute('url','pilze.x3d');
-						meinInline2.setAttribute('id','pilze_inline'+counter);
-
-						var ot2 = document.getElementById('scene');
-						meinTransform2.appendChild(meinInline2);
-						ot2.appendChild(meinTransform2);
-
-						var lilaBox = document.getElementById("pilze_tOuter"+counter);
-
-						lilaBox.addEventListener('mousedown', start, false);
-
-						var mvbl2 = new x3dom.Moveable(boxes, lilaBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-
-					else if(val == 'K&auml;se')
-					{
-						var meinTransform4 = document.createElement('Transform');
-						meinTransform4.setAttribute('id','kaese_tOuter'+counter);
-
-						var meinInline4 = document.createElement('Inline');
-						meinInline4.setAttribute('url','kaese.x3d');
-						meinInline4.setAttribute('id','kaese_inline'+counter);
-
-						var ot4 = document.getElementById('scene');
-						meinTransform4.appendChild(meinInline4);
-						ot4.appendChild(meinTransform4);
-
-						var greyBox = document.getElementById("kaese_tOuter"+counter);
-
-						greyBox.addEventListener('mousedown', start, false);
-
-						var mvbl4 = new x3dom.Moveable(boxes, greyBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-
-					else if(val == 'Spinat')
-					{
-						var meinTransform6 = document.createElement('Transform');
-						meinTransform6.setAttribute('id','spinat_tOuter'+counter);
-
-						var meinInline6 = document.createElement('Inline');
-						meinInline6.setAttribute('url','spinat.x3d');
-						meinInline6.setAttribute('id','spinat_inline'+counter);
-
-						var ot6 = document.getElementById('scene');
-						meinTransform6.appendChild(meinInline6);
-						ot6.appendChild(meinTransform6);
-
-						var brownBox = document.getElementById("spinat_tOuter"+counter);
-
-						brownBox.addEventListener('mousedown', start, false);
-
-						var mvbl6 = new x3dom.Moveable(boxes, brownBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-					else if(val == 'Thunfisch')
-					{
-						var meinTransform7 = document.createElement('Transform');
-						meinTransform7.setAttribute('id','thunfisch_tOuter'+counter);
-
-						var meinInline7 = document.createElement('Inline');
-						meinInline7.setAttribute('url','thunfisch.x3d');
-						meinInline7.setAttribute('id','thunfisch_inline'+counter);
-
-						var ot7 = document.getElementById('scene');
-						meinTransform7.appendChild(meinInline7);
-						ot7.appendChild(meinTransform7);
-
-						var yellowBox = document.getElementById("thunfisch_tOuter");
-
-						yellowBox.addEventListener('mousedown', start, false);
-
-						var mvbl7 = new x3dom.Moveable(boxes, yellowBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-
-					else if(val == 'Mais')
-					{
-						var meinTransform9 = document.createElement('Transform');
-						meinTransform9.setAttribute('id','mais_tOuter'+counter);
-
-						var meinInline9 = document.createElement('Inline');
-						meinInline9.setAttribute('url','mais.x3d');
-						meinInline9.setAttribute('id','mais_inline'+counter);
-
-						var ot9 = document.getElementById('scene');
-						meinTransform9.appendChild(meinInline9);
-						ot9.appendChild(meinTransform9);
-
-						var magentaBox = document.getElementById("mais_tOuter");
-
-						magentaBox.addEventListener('mousedown', start, false);
-
-						var mvbl9 = new x3dom.Moveable(boxes, magentaBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-					else if(val == 'Ei')
-					{
-						var meinTransform10 = document.createElement('Transform');
-						meinTransform10.setAttribute('id','ei_tOuter'+counter);
-
-						var meinInline10 = document.createElement('Inline');
-						meinInline10.setAttribute('url','ei.x3d');
-						meinInline10.setAttribute('id','ei_inline'+counter);
-
-						var ot10 = document.getElementById('scene');
-						meinTransform10.appendChild(meinInline10);
-						ot10.appendChild(meinTransform10);
-
-						var pinkBox = document.getElementById("ei_tOuter");
-
-						pinkBox.addEventListener('mousedown', start, false);
-
-						var mvbl10 = new x3dom.Moveable(boxes, pinkBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-					else if(val == 'Paprika')
-					{
-						var meinTransform11 = document.createElement('Transform');
-						meinTransform11.setAttribute('id','paprika_tOuter'+counter);
-
-						var meinInline11 = document.createElement('Inline');
-						meinInline11.setAttribute('url','paprika.x3d');
-						meinInline11.setAttribute('id','paprika_inline'+counter);
-
-						var ot11 = document.getElementById('scene');
-						meinTransform11.appendChild(meinInline11);
-						ot11.appendChild(meinTransform11);
-
-						var orangeBox = document.getElementById("paprika_tOuter");
-
-						orangeBox.addEventListener('mousedown', start, false);
-
-						var mvbl11 = new x3dom.Moveable(boxes, orangeBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-					else if(val == 'Chili')
-					{
-						var meinTransform12 = document.createElement('Transform');
-						meinTransform12.setAttribute('id','chili_tOuter'+counter);
-
-						var meinInline12 = document.createElement('Inline');
-						meinInline12.setAttribute('url','chili.x3d');
-						meinInline12.setAttribute('id','chili_inline'+counter);
-
-						var ot12 = document.getElementById('scene');
-						meinTransform12.appendChild(meinInline12);
-						ot12.appendChild(meinTransform12);
-
-						var lightgreyBox = document.getElementById("chili_tOuter");
-
-						lightgreyBox.addEventListener('mousedown', start, false);
-
-						var mvbl12 = new x3dom.Moveable(boxes, lightgreyBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-					else if(val == 'Zwiebel')
-					{
-						var meinTransform13 = document.createElement('Transform');
-						meinTransform13.setAttribute('id','zwiebel_tOuter'+counter);
-
-						var meinInline13 = document.createElement('Inline');
-						meinInline13.setAttribute('url','zwiebel.x3d');
-						meinInline13.setAttribute('id','zwiebel_inline'+counter);
-
-						var ot13 = document.getElementById('scene');
-						meinTransform13.appendChild(meinInline13);
-						ot13.appendChild(meinTransform13);
-
-						var darkgreyBox = document.getElementById("zwiebel_tOuter");
-
-						darkgreyBox.addEventListener('mousedown', start, false);
-
-						var mvbl13 = new x3dom.Moveable(boxes, darkgreyBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-					else if(val == 'Basilikum')
-					{
-						var meinTransform14 = document.createElement('Transform');
-						meinTransform14.setAttribute('id','basilikum_tOuter'+counter);
-
-						var meinInline14 = document.createElement('Inline');
-						meinInline14.setAttribute('url','basilikum.x3d');
-						meinInline14.setAttribute('id','basilikum_inline'+counter);
-
-						var ot14 = document.getElementById('scene');
-						meinTransform14.appendChild(meinInline14);
-						ot14.appendChild(meinTransform14);
-
-						var pointedBox = document.getElementById("basilikum_tOuter");
-
-						pointedBox.addEventListener('mousedown', start, false);
-
-						var mvbl14 = new x3dom.Moveable(boxes, pointedBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-					else if(val == 'Mozzarella')
-					{
-						var meinTransform15 = document.createElement('Transform');
-						meinTransform15.setAttribute('id','mozzarella_tOuter'+counter);
-
-						var meinInline15 = document.createElement('Inline');
-						meinInline15.setAttribute('url','mozzarella.x3d');
-						meinInline15.setAttribute('id','mozzarella_inline'+counter);
-
-						var ot15 = document.getElementById('scene');
-						meinTransform15.appendChild(meinInline15);
-						ot15.appendChild(meinTransform15);
-
-						var darkbrownBox = document.getElementById("mozzarella_tOuter");
-
-						darkbrownBox.addEventListener('mousedown', start, false);
-
-						var mvbl15 = new x3dom.Moveable(boxes, darkbrownBox, moveCallback, 0);
-
-						counter++;
-						return false;
-					}
-					else if(val == 'Pepperonisalami')
-					{
-						var meinTransform16 = document.createElement('Transform');
-						meinTransform16.setAttribute('id','pepperonisalami_tOuter'+counter);
-
-						var meinInline16 = document.createElement('Inline');
-						meinInline16.setAttribute('url','pepperonisalami.x3d');
-						meinInline16.setAttribute('id','pepperonisalami_inline'+counter);
-
-						var ot16 = document.getElementById('scene');
-						meinTransform16.appendChild(meinInline16);
-						ot16.appendChild(meinTransform16);
-
-						var lightbrownBox = document.getElementById("pepperonisalami_tOuter");
-
-						lightbrownBox.addEventListener('mousedown', start, false);
-
-						var mvbl16 = new x3dom.Moveable(boxes, lightbrownBox, moveCallback, 0);
-
-						counter++;
-						return false;
-
 					}*/
+					 if(val == "Schinken")
+					{
+						var meinTransform = document.createElement('Transform');
+						meinTransform.setAttribute('id','schinken_tOuter'+counter);
+
+						var meinInline = document.createElement('Inline');
+						meinInline.setAttribute('url','schinken.x3d');
+						meinInline.setAttribute('id','schinken_inline'+counter);
+						meinInline.setAttribute('mapDefToId', 'true');
+						meinInline.setAttribute('nameSpaceName', 'schinken_tOuter'+counter);
+
+						var ot = document.getElementById('scene');
+						meinTransform.appendChild(meinInline);
+						ot.appendChild(meinTransform);
+						
+						var myI = "schinken_tOuter"+counter;
+						
+						document.getElementById(myI).onmousedown = function(evt)
+						{
+							if (ID == "null")
+							{
+								oldMousePosX = evt.layerX;
+								oldMousePosY = evt.layerY;
+								mousedown = true;
+								ID = myI;
+							}
+						}
+						
+						document.getElementById(myI).onmousemove = function(evt)
+						{
+							if (myI == ID)
+							{
+								if(drag == true)
+								{
+									if(mousedown == true)
+									{
+										newMousePosX = evt.layerX;
+										document.getElementById('lala').innerHTML="Maus:ad "+newMousePosX;
+
+										newMousePosY = evt.layerY;
+										var differenz = (newMousePosX - oldMousePosX) / 15 ;
+										var differenzY = (newMousePosY - oldMousePosY) / 15  ;
+	
+										var newId = myI+"__trans";
+
+										var position = document.getElementById(newId).getAttribute("translation");
+										var res = position.split(" ");
+
+										var x = res[0];
+										var y = res[1];
+										var z = res[2];
+
+										var neuX = Number(x);
+										var neuY = Number(y);
+
+										//document.getElementById('lala').innerHTML="Maus: "+oldMousePosX+ " Position: "+neuX+" "+neuY+" "+z+ " mousedown: "+mousedown;
+
+										neuX = neuX + differenz;
+										neuY = neuY - differenzY;
+
+										oldMousePosX = newMousePosX;
+										oldMousePosY = newMousePosY;
+
+										document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
+
+										newMousePosX = 0;
+									}
+								}
+							}
+						}
+						
+						document.onmouseup = function (evt)
+						{
+							mousedown = false;
+							ID = "null";
+						}
+						
+						counter++;
+						return false;
+					}
+					else if(val == "Ananas")
+					{
+						var meinTransform = document.createElement('Transform');
+						meinTransform.setAttribute('id','schinken_tOuter'+counter);
+
+						var meinInline = document.createElement('Inline');
+						meinInline.setAttribute('url','ananas.x3d');
+						meinInline.setAttribute('id','schinken_inline'+counter);
+						meinInline.setAttribute('mapDefToId', 'true');
+						meinInline.setAttribute('nameSpaceName', 'schinken_tOuter'+counter);
+
+						var ot = document.getElementById('scene');
+						meinTransform.appendChild(meinInline);
+						ot.appendChild(meinTransform);
+						
+						var myI = "schinken_tOuter"+counter;
+						
+						document.getElementById(myI).onmousedown = function(evt)
+						{
+							if (ID == "null")
+							{
+								oldMousePosX = evt.layerX;
+								oldMousePosY = evt.layerY;
+								mousedown = true;
+								ID = myI;
+							}
+						}
+						
+						document.getElementById(myI).onmousemove = function(evt)
+						{
+							if (myI == ID)
+							{
+								if(drag == true)
+								{
+									if(mousedown == true)
+									{
+										newMousePosX = evt.layerX;
+										document.getElementById('lala').innerHTML="Maus:ad "+newMousePosX;
+
+										newMousePosY = evt.layerY;
+										var differenz = (newMousePosX - oldMousePosX) / 15 ;
+										var differenzY = (newMousePosY - oldMousePosY) / 15  ;
+	
+										var newId = myI+"__trans";
+
+										var position = document.getElementById(newId).getAttribute("translation");
+										var res = position.split(" ");
+
+										var x = res[0];
+										var y = res[1];
+										var z = res[2];
+
+										var neuX = Number(x);
+										var neuY = Number(y);
+
+										//document.getElementById('lala').innerHTML="Maus: "+oldMousePosX+ " Position: "+neuX+" "+neuY+" "+z+ " mousedown: "+mousedown;
+
+										neuX = neuX + differenz;
+										neuY = neuY - differenzY;
+
+										oldMousePosX = newMousePosX;
+										oldMousePosY = newMousePosY;
+
+										document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
+
+										newMousePosX = 0;
+									}
+								}
+							}
+						}
+						
+						document.onmouseup = function (evt)
+						{
+							mousedown = false;
+							ID = "null";
+						}
+						
+						counter++;
+						return false;
+					}
+					
+					else if(val == "Tomate")
+					{
+						var meinTransform = document.createElement('Transform');
+						meinTransform.setAttribute('id','tomate_tOuter'+counter);
+
+						var meinInline = document.createElement('Inline');
+						meinInline.setAttribute('url','tomate.x3d');
+						meinInline.setAttribute('id','tomate_inline'+counter);
+						meinInline.setAttribute('mapDefToId', 'true');
+						meinInline.setAttribute('nameSpaceName', 'tomate_tOuter'+counter);
+
+						var ot = document.getElementById('scene');
+						meinTransform.appendChild(meinInline);
+						ot.appendChild(meinTransform);
+						
+						var myI = "tomate_tOuter"+counter;
+						
+						document.getElementById(myI).onmousedown = function(evt)
+						{
+							if (ID == "null")
+							{
+								oldMousePosX = evt.layerX;
+								oldMousePosY = evt.layerY;
+								mousedown = true;
+								ID = myI;
+							}
+						}
+						
+						document.getElementById(myI).onmousemove = function(evt)
+						{
+							if (myI == ID)
+							{
+								if(drag == true)
+								{
+									if(mousedown == true)
+									{
+										newMousePosX = evt.layerX;
+										document.getElementById('lala').innerHTML="Maus:ad "+newMousePosX;
+
+										newMousePosY = evt.layerY;
+										var differenz = (newMousePosX - oldMousePosX) / 15 ;
+										var differenzY = (newMousePosY - oldMousePosY) / 15  ;
+	
+										var newId = myI+"__trans";
+
+										var position = document.getElementById(newId).getAttribute("translation");
+										var res = position.split(" ");
+
+										var x = res[0];
+										var y = res[1];
+										var z = res[2];
+
+										var neuX = Number(x);
+										var neuY = Number(y);
+
+										//document.getElementById('lala').innerHTML="Maus: "+oldMousePosX+ " Position: "+neuX+" "+neuY+" "+z+ " mousedown: "+mousedown;
+
+										neuX = neuX + differenz;
+										neuY = neuY - differenzY;
+
+										oldMousePosX = newMousePosX;
+										oldMousePosY = newMousePosY;
+
+										document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
+
+										newMousePosX = 0;
+									}
+								}
+							}
+						}
+						
+						document.onmouseup = function (evt)
+						{
+							mousedown = false;
+							ID = "null";
+						}
+						
+						counter++;
+						return false;
+					}
+					
 			     };
-
-
-
-			     /*function Textur()
-				 {
-				 	else if(soße)
-					{
-
-					}
-					else if(schwarzeolive)
-					{
-
-					}
-			     };*/
-
-			    var drag = false;
-
-			    function start(event)
-			    {
-			        if (!drag)
-					{
-			            drag = true;
-			        }
-			    }
-
-			    // on mouse move
-			    function moveCallback(elem, trans)
-			    {
-			      //  document.getElementById('moveEvent').innerHTML = "Move " + elem.id + ": [" + trans + "]";
-			    }
-
-
-			    document.onload = function()
-			    {
-			        var boxes = document.getElementById("boxes");
-
-			        boxes.addEventListener('mouseup', stop, false);
-
-			       var mvbl3 = new x3dom.Moveable(boxes, blueBox, moveCallback, 0);
-				   var mvbl = new x3dom.Moveable(boxes, greenBox, moveCallback, 0);
-			        var mvbl1 = new x3dom.Moveable(boxes, redBox, moveCallback, 0);
-					var mvbl8 = new x3dom.Moveable(boxes, cyanBox, moveCallback, 0);
-					var mvbl2 = new x3dom.Moveable(boxes, lilaBox, moveCallback, 0);
-
-				/*	var mvbl4 = new x3dom.Moveable(boxes, greyBox, moveCallback, 0);
-					var mvbl5 = new x3dom.Moveable(boxes, whiteBox, moveCallback, 0);
-					var mvbl6 = new x3dom.Moveable(boxes, brownBox, moveCallback, 0);
-					var mvbl7 = new x3dom.Moveable(boxes, yellowBox, moveCallback, 0);
-					var mvbl9 = new x3dom.Moveable(boxes, magentaBox, moveCallback, 0);
-					var mvbl10 = new x3dom.Moveable(boxes, pinkBox, moveCallback, 0);
-					var mvbl11 = new x3dom.Moveable(boxes, orangeBox, moveCallback, 0);
-					var mvbl12 = new x3dom.Moveable(boxes, lightgreyBox, moveCallback, 0);
-					var mvbl13 = new x3dom.Moveable(boxes, darkgreyBox, moveCallback, 0);
-					var mvbl14 = new x3dom.Moveable(boxes, pointedBox, moveCallback, 0);
-					var mvbl15 = new x3dom.Moveable(boxes, darkbrownBox, moveCallback, 0);
-					var mvbl16 = new x3dom.Moveable(boxes, lightbrownBox, moveCallback, 0);*/
-
+				 
+				
+				 
+				function removeZutat()
+				{
+					var zuLoeschendeZutat = document.getElementById();
+					zuLoeschendeZutat.remove();
 				}
 
 				function viewPointChange()
@@ -471,6 +375,7 @@
 					//Moveable muss deaktiviert werden
 
 					document.getElementById('test1__navi').setAttribute("type", "ANY");
+					drag = false;
 				}
 
 				function viewPointChange2()
@@ -482,6 +387,7 @@
 
 					document.getElementById('test1__navi').setAttribute("type", "NONE");
 					document.getElementById("boxes").runtime.resetView();
+					drag = true;
 				}
 
   </script>
@@ -513,6 +419,7 @@
 							<!-- hier hin -->
 						<scene>
 					</x3d>
+					<p id="lala">Test</p>
 
 						<!--<input type="button" id="but" value="Entfernen" onclick="removeNode();"> </input><br />
 
@@ -523,9 +430,11 @@
 						<img width="10%" src="salami.jpg" onclick="changeTexture('salami.jpg');" style="cursor:pointer;" border="1">-->
 
 						<p>
+						<input type="image" src="bla.jpg" id="but1" value="Salami" onclick="hinzufuegen(this.value);"></input><br />
 				<form>
 				Fleisch<br />
-					<input type="button" id="but1" value="Salami" onclick="hinzufuegen(this.form.but1.value);"></input><br />
+					<input type="button" id="but1" value="Salami" onclick="hinzufuegen(this.form.but1.value);"></input>
+					
 					<input type="button" id="but2" value="Schinken" onclick="hinzufuegen(this.form.but2.value);"> </input><br />
 					<input type="button" id="but8" value="Thunfisch" onclick="hinzufuegen(this.form.but8.value);"> </input><br />
 					<input type="button" id="but17" value="Pepperonisalami" onclick="hinzufuegen(this.form.but17.value);"> </input><br />
@@ -547,6 +456,7 @@
 					<input type="button" id="but5" value="K&auml;se" onclick="hinzufuegen(this.form.but5.value);"> </input><br /><br />
 					<input type="button" id="fertig" value="Pizza-Beweg-Ansicht" onclick="viewPointChange();"> </input><br />
 					<input type="button" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange2();"> </input><br />
+					<input type="button" id="entfernen" value="Zutat entfernen" onclick="removeZutat();"> </input><br />
 				</form>
 		</p>
 	<span></span>
