@@ -2,13 +2,8 @@
       <scene DEF='ananas' id="ananas">
         <navigationInfo type='"NONE"'></navigationInfo>
         <group>
-		          <viewpoint DEF='persp' description='persp' orientation='0.158355 -0.79403 -0.58689 3.5637' position='3.26489 27.5626 -5.81928' fieldOfView='0.950022'></viewpoint>
-
-          <transform id="ananas_trans" DEF="ananas_trans">
-          <transform DEF='trans' rotation='100 0 0 1.57' scale='0.4 0.4 0.4' translation='1.3447 0.667847 0.5' 
-          	onmouseover="document.getElementById('mouseOverEvent').innerHTML='Mouse: over - draggable';"
-          	onmouseout="document.getElementById('mouseOverEvent').innerHTML='Mouse: out');">
-            <shape>
+          <transform DEF='trans' id="trans" rotation='100 0 0 1.57' scale='0.4 0.4 0.4' translation='1.3447 0.667847 0.5'>
+            <shape DEF="box" id="box">
               <appearance>
                 <material DEF='lambert2_0' diffuseColor='0 0 0' shininess='0'></material>
                 <imageTexture repeatS='false' repeatT='false' url='"ananasTest.png"'></imageTexture>
@@ -20,7 +15,6 @@
                 <textureCoordinate point='0.001839 0.623557 0.001839 0.37644 0.109976 0.37644 0.109976 0.623557 0.482704 0.418153 0.482704 0.581843 0.548442 0.418153 0.548441 0.581843 0.921157 0.37644 0.921157 0.623557 0.022928 0.001992 0.088665 0.001992 0.022928 0.998008 0.088665 0.998008'></textureCoordinate>
               </indexedFaceSet>
             </shape>
-          </transform>
           </transform>
         </group>
       </scene>
