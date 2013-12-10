@@ -50,10 +50,10 @@ if($email&&$password&&$password2)
 			$headers = mail($email, $emailBetreff, $body);
 			header("location:../register_success.html");
 		}
-		else
+		/*else
 		{
 			header("location:../register_nosuccess.html");
-		}
+		}*/
 	}
 	else
 	{
