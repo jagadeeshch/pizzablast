@@ -446,4 +446,27 @@ p a
     font-style: normal;
 }
 
+textarea {
+	float:right;
+}
+
+input {
+	float:right;
+	width:180px;
+}
+
+form {
+	width:35%;
+}
+
+.button {
+	width:140px;
+}
+
+#register {
+	width:40%;
+}
+
+
+
 
