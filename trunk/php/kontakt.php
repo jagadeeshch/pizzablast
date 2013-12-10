@@ -3,7 +3,7 @@
 /* Betreff und Email Variable */
 
 	$emailBetreff = 'Pizza-Blast Kontakt';
-	$webmaster = '';
+	$webmaster = 'to_be@gmx.de';
 	
 	/* Emailform Daten */
 
