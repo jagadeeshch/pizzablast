@@ -450,12 +450,8 @@ textarea {
 	float:right;
 }
 
-input {
-	float:right;
-	width:180px;
-}
-
-form {
+form 
+{
 	width:35%;
 }
 
@@ -465,6 +461,11 @@ form {
 
 #register {
 	width:40%;
+}
+
+#food
+{
+	font-size: 16px;
 }
 
 
