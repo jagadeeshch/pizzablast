@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+session_destroy();
+
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -29,8 +37,8 @@
       	<div id="login">
 	    		<h2>Login</h2>
             	<p><br /></p>
-            		<p>Der Login war nicht erfolgreich!</p>
-                    <p><a href="login.html">Zurück</a></p>
+            		<p>Sie wurden erfolgreich abgemeldet!</p>
+                    <p><a href="pizzacreator.php">Zum Pizza Creator</a></p>
       	</div>
 	</div>          
 	<div id="footer">
