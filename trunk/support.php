@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if(!session_is_registered(id)) {
+
+	header("location:support.html");
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -5,7 +15,7 @@
 	<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
         <link rel="stylesheet" href="x3dom/x3dom.css" type="text/css" />
-		<title>Pizza Blast - Bitte loggen Sie sich ein</title>
+		<title>Welcome @ Pizza Blast</title>
 </head>
 
 <body>
@@ -20,20 +30,31 @@
 	   </div>
 			<ul>
 				<li><a href="support.php">Support</a></li>
-				<li><a href="login.html">Login</a></li>
+				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
+ 	</div>
+	<div id="content">
+		<div>
+			<h1>Kontaktformular</h1>
+			<p>Sie haben Fragen, Anregungen oder gar Kritik? Kein Problem! Bitte zögern Sie nicht uns über dieses Kontaktformular zu kontaktieren.                             Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen.</p>
+            <p><br /></p>
+              <form action="php/kontakt.php" method="post">
+              		<p>Name:* <input type="text" class="input" name="Name" /></p>
+              		<p>E-Mail:* <input type="text" class="input" name="Email" /></p>
+              		<p>Betreff:* <input type="text" class="input" name="Betreff" /></p>
+              		<p>Ihre Nachricht:* <textarea name="Nachricht" rows="10"></textarea></p>
+              		<p><br /></p>
+              		<p><br /></p>
+              		<p><br /></p>
+                    <br />
+              		<p><input class="button" type="submit" /></p>
+              </form>
+              <p><br /></p>
+              <p><br /></p>
+		</div>
 	</div>
-    
-    <div id="content">
-      	<div id="login">
-	    		<h2>Login</h2>
-            	<p><br /></p>
-            		<p>Der Login war nicht erfolgreich!</p>
-                    <p><a href="login.html">Zurück</a></p>
-      	</div>
-	</div>          
-	<div id="footer">
+		<div id="footer">
 		<div>
 			<ul>
 				<li id="pasta">
@@ -74,4 +95,3 @@
 	</div>
 </body>
 </html>
-           

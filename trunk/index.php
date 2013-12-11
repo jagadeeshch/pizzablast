@@ -1,11 +1,24 @@
+<?php
+
+session_start();
+
+if(!session_is_registered(id)) {
+
+	header("location:index2.html");
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
         <link rel="stylesheet" href="x3dom/x3dom.css" type="text/css" />
-		<title>Pizza Blast - Bitte loggen Sie sich ein</title>
+        <style type="text/css">
+        body,td,th {
+	color: #000000;
+}
+        </style>
+        <title>Welcome @ Pizza Blast</title>
 </head>
 
 <body>
@@ -20,19 +33,15 @@
 	   </div>
 			<ul>
 				<li><a href="support.php">Support</a></li>
-				<li><a href="login.html">Login</a></li>
+				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
+		<span></span>
 	</div>
-    
-    <div id="content">
-      	<div id="login">
-	    		<h2>Login</h2>
-            	<p><br /></p>
-            		<p>Der Login war nicht erfolgreich!</p>
-                    <p><a href="login.html">Zurück</a></p>
-      	</div>
-	</div>          
+       <div id="content">
+		<h1>Willkommen auf Pizza Blast!</h1>
+		<p>Pizza Blast ist der einzigarte Pizza Creator, welcher dich deine eigene Wunschpizza erstellen lässt!</p>
+	</div>
 	<div id="footer">
 		<div>
 			<ul>
@@ -74,4 +83,3 @@
 	</div>
 </body>
 </html>
-           
