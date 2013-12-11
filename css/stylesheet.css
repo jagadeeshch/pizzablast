@@ -452,15 +452,24 @@ textarea {
 
 form 
 {
-	width:35%;
+	width:32%;
+}
+
+.input {
+	float:right;
 }
 
 .button {
-	width:140px;
+	width:120px;
+	float:right;
 }
 
 #register {
-	width:40%;
+	width:35%;
+}
+
+#pwvergessen {
+	width:25%;
 }
 
 #food
