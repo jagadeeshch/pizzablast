@@ -467,9 +467,11 @@ if(!session_is_registered(id)) {
                          <p><h2>Pizza Veränderungen</h2></p>
                          <P><input type="image" src="images/drehen.png" title="Pizza-Dreh-Ansicht" id="fertig" value="Pizza-Beweg-Ansicht" onclick="viewPointChange();"> </input>
                          <input type="image" src="images/belegen.png" title="weitere Zutaten hinzufügen" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange2();"> </input>
+                         <input type="image" src="images/zutatloeschen.png" title="Zutaten löschen" id="entfernen" value="Zutat entfernen starten" onclick="removeZutat();"> </input>
+                         <input type="image" src="images/zutatloeschenfertig.png" title="Pizza weiter belegen" id="entfernen" value="Zutat entfernen beenden" onclick="stopRemove();"> </input>
+                         <input type="image" src="images/keinezutaten.png" title="Alle Zutaten löschen" id="fertig" value="Pizza Fertig" onclick=""> </input>
                          <input type="image" src="images/pizzafertig2.png" title="Pizza bestellen" id="fertig" value="Pizza Fertig" onclick=""> </input>
                         </div>
-                        <br />
                         
 					<div id=preise>
 					<p id="Auswahl" style="font-size:18px">Preisliste der ausgewählten Zutaten: </p>
@@ -496,15 +498,6 @@ if(!session_is_registered(id)) {
                     ----------------------------------------
                     <p id="Gesamtsumme" style="font-size:20px"><strong>Gesamtpreis: 3 €</strong></p>
                     </div>
-
-					<input type="button" id="fertig" value="Pizza-Beweg-Ansicht" onclick="viewPointChange();"> </input><br />
-					<input type="button" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange2();"> </input><br />
-					<input type="button" id="entfernen" value="Zutat entfernen starten" onclick="removeZutat();"> </input><br />
-                    <input type="button" id="entfernen" value="Zutat entfernen beenden" onclick="stopRemove();"> </input><br />
-				</form>
-
-		</p>
-	<span></span>
     </div>
     </div>
 	<div id="footer">
