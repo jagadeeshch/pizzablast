@@ -47,7 +47,8 @@ if(!session_is_registered(id)) {
 							if(val == "Schinken")
 							{
 								ZutatenCounter[0] += 1;
-								document.getElementById('Schinken').innerHTML="Schinken: "+ZutatenCounter[0]+" x "+ PreisCounter[0]+" € = "+ (ZutatenCounter[0]*PreisCounter[0]+" €");
+								berechneGesamtpreis();
+								document.getElementById('Schinken').innerHTML="Schinken: "+ZutatenCounter[0]+" x "+ PreisCounter[0]+" € = "+ kaufm(ZutatenCounter[0]*PreisCounter[0])+" €";
 								berechneGesamtpreis();
 
 								var meinTransform = document.createElement('Transform');
@@ -76,7 +77,8 @@ if(!session_is_registered(id)) {
 										if(removeAktiv == true)
 										{
 											ZutatenCounter[0] -= 1;
-											document.getElementById('Schinken').innerHTML="Schinken: "+ZutatenCounter[0]+" x "+ PreisCounter[0]+" € = "+ (ZutatenCounter[0]*PreisCounter[0]+" €");
+											berechneGesamtpreis();
+											document.getElementById('Schinken').innerHTML="Schinken: "+ZutatenCounter[0]+" x "+ PreisCounter[0]+" € = "+ kaufm(ZutatenCounter[0]*PreisCounter[0])+" €";
 											var test = removeID.getAttribute('id');
 											var test2 = removeID2.getAttribute('id');
 											var rinline = document.getElementById(test);
@@ -126,13 +128,18 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
+													
+													var neuX2 = neuX * neuX;
+													var neuY2 = neuY * neuY;
+													if(neuX2 + neuY2 <= 110)
+													{
+														oldMousePosX = newMousePosX;
+														oldMousePosY = newMousePosY;
 
-													oldMousePosX = newMousePosX;
-													oldMousePosY = newMousePosY;
+														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
-													document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
-
-													newMousePosX = 0;
+														newMousePosX = 0;
+													}
 											}
 										}
 									}
@@ -151,7 +158,8 @@ if(!session_is_registered(id)) {
 							else if(val == "Ananas")
 							{
 								ZutatenCounter[8] += 1;
-								document.getElementById('Ananas').innerHTML = "Ananas: "+ZutatenCounter[8]+" x "+ PreisCounter[8]+" € = "+ (ZutatenCounter[8]*PreisCounter[8]+" €");
+								berechneGesamtpreis();
+								document.getElementById('Ananas').innerHTML = "Ananas: "+ZutatenCounter[8]+" x "+ PreisCounter[8]+" € = "+ kaufm(ZutatenCounter[8]*PreisCounter[8])+" €";
 								berechneGesamtpreis();
 
 								var meinTransform = document.createElement('Transform');
@@ -180,7 +188,8 @@ if(!session_is_registered(id)) {
 										if(removeAktiv == true)
 										{
 											ZutatenCounter[8] -= 1;
-											document.getElementById('Ananas').innerHTML="Ananas: "+ZutatenCounter[8]+" x "+ PreisCounter[8]+" € = "+ (ZutatenCounter[8]*PreisCounter[8]+" €");
+											berechneGesamtpreis();
+											document.getElementById('Ananas').innerHTML="Ananas: "+ZutatenCounter[8]+" x "+ PreisCounter[8]+" € = "+ kaufm(ZutatenCounter[8]*PreisCounter[8])+" €";
 											var test = removeID.getAttribute('id');
 											var test2 = removeID2.getAttribute('id');
 											var rinline = document.getElementById(test);
@@ -230,13 +239,18 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
+													
+													var neuX2 = neuX * neuX;
+													var neuY2 = neuY * neuY;
+													if(neuX2 + neuY2 <= 160)
+													{
+														oldMousePosX = newMousePosX;
+														oldMousePosY = newMousePosY;
 
-													oldMousePosX = newMousePosX;
-													oldMousePosY = newMousePosY;
+														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
-													document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
-
-													newMousePosX = 0;
+														newMousePosX = 0;
+													}
 											}
 										}
 									}
@@ -258,7 +272,8 @@ if(!session_is_registered(id)) {
 							else if(val == "Tomate")
 							{
 								ZutatenCounter[5] += 1;
-								document.getElementById('Tomate').innerHTML = "Tomate: "+ZutatenCounter[5]+" x "+ PreisCounter[5]+" € = "+ (ZutatenCounter[5]*PreisCounter[5]+" €");
+								berechneGesamtpreis();
+								document.getElementById('Tomate').innerHTML = "Tomate: "+ZutatenCounter[5]+" x "+ PreisCounter[5]+" € = "+ kaufm(ZutatenCounter[5]*PreisCounter[5])+" €";
 								berechneGesamtpreis();
 
 								var meinTransform = document.createElement('Transform');
@@ -287,7 +302,8 @@ if(!session_is_registered(id)) {
 										if(removeAktiv == true)
 										{
 											ZutatenCounter[5] -= 1;
-											document.getElementById('Tomate').innerHTML="Tomate: "+ZutatenCounter[5]+" x "+ PreisCounter[5]+" € = "+ (ZutatenCounter[5]*PreisCounter[5]+" €");
+											berechneGesamtpreis();
+											document.getElementById('Tomate').innerHTML="Tomate: "+ZutatenCounter[5]+" x "+ PreisCounter[5]+" € = "+ kaufm(ZutatenCounter[5]*PreisCounter[5])+" €";
 											var test = removeID.getAttribute('id');
 											var test2 = removeID2.getAttribute('id');
 											var rinline = document.getElementById(test);
@@ -337,13 +353,18 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
+													
+													var neuX2 = neuX * neuX;
+													var neuY2 = neuY * neuY;
+													if(neuX2 + neuY2 <= 115)
+													{
+														oldMousePosX = newMousePosX;
+														oldMousePosY = newMousePosY;
 
-													oldMousePosX = newMousePosX;
-													oldMousePosY = newMousePosY;
+														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
-													document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
-
-													newMousePosX = 0;
+														newMousePosX = 0;
+													}
 											}
 										}
 									}
@@ -360,6 +381,14 @@ if(!session_is_registered(id)) {
 							}
 
 					     };
+						 
+						 //Quelle: http://www.dcljs.de/faq/antwort.php?Antwort=rechnen_runden#5
+						 function kaufm(x) 
+						 {
+  							var k = (Math.round(x * 100) / 100).toString();
+  							k += (k.indexOf('.') == -1)? '.00' : '00';
+  							return k.substring(0, k.indexOf('.') + 3);
+						}
 
 
 						 function berechneGesamtpreis()
@@ -369,7 +398,7 @@ if(!session_is_registered(id)) {
 							{
 								gesamtsumme += ZutatenCounter[i]*PreisCounter[i];
 							}
-							document.getElementById('Gesamtsumme').innerHTML="Gesamtpreis: "+gesamtsumme+" €";
+							document.getElementById('Gesamtsumme').innerHTML="Gesamtpreis: "+kaufm(gesamtsumme)+" €";
 						 }
 
 						function removeZutat()
