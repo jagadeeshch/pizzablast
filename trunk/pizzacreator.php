@@ -442,30 +442,32 @@ if(!session_is_registered(id)) {
 
                     	<div id="meat">
                         <p><h2>Fleisch</h2></p>
-                        <P><input type="image" src="images/salami.png" title="Salami" id="but1" value="Salami" onclick="hinzufuegen(this.value);"> | </input>
-                         <input type="image" src="images/psalami.png" title="Pepperoni" id="but17" value="Schinken" onclick="hinzufuegen(this.value);"> | </input>
+                        <P><input type="image" src="images/salami.png" title="Salami" id="but1" value="Salami" onclick="hinzufuegen(this.value);"> </input>
+                         <input type="image" src="images/psalami.png" title="Pepperoni" id="but17" value="Schinken" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/schinken.png" title="Schinken" id="but2" value="Schinken" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/tuna.png" title="Thunfisch" id="but8" value="Thunfisch" onclick="hinzufuegen(this.value);"> </input> </p>
                         <p><h2>Obst und Gemüse</h2></p>
-                         <P><input type="image" src="images/mushroom.png" title="Pilze" id="but3" value="Pilz" onclick="hinzufuegen(this.value);"></input>
+                         <P><input type="image" src="images/mushroom.png" title="Pilze" id="but3" value="Pilz" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/tomato.png" title="Tomate" id="but4" value="Tomate" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/olives.png" title="Oliven" id="but6" value="Olive" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/spinach.png" title="Spinat" id="but7" value="Spinat" onclick="hinzufuegen(this.value);"> </input>
-                         <input type="image" src="images/pineapple.png" title="Ananas" id="but9" value="Ananas" onclick="hinzufuegen(this.value);"></input> <br/>
+                         <input type="image" src="images/pineapple.png" title="Ananas" id="but9" value="Ananas" onclick="hinzufuegen(this.value);"> </input> <br/>
                          <input type="image" src="images/maize.png" title="Mais" id="but10" value="Mais" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/egg.png" title="Ei" id="but11" value="Ei" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/paprika.png" title="Paprika" id="but12" value="Paprika" onclick="hinzufuegen(this.value);"> </input>
-                         <input type="image" src="images/chili.png" title="Chili" id="but13" value="Chili" onclick="hinzufuegen(this.value);"></input>
+                         <input type="image" src="images/chili.png" title="Chili" id="but13" value="Chili" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/onion.png" title="Zwiebel" id="but14" value="Zwiebel" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/basil.png" title="Basilikum" id="but15" value="Basilikum" onclick="hinzufuegen(this.value);"> </input></p>
                          <p><h2>K&auml;sesorten</h2></p>
-                         <P><input type="image" src="images/mozarella.png" title="Mozzarella" id="but16" value="Mozarella" onclick="hinzufuegen(this.value);"></input>
+                         <P><input type="image" src="images/mozarella.png" title="Mozzarella" id="but16" value="Mozarella" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/cheese.png" title="Käse" id="but5" value="K&auml;se" onclick="hinzufuegen(this.value);"> </input></p>
 						 <p><h2>Soßen</h2></p>
-                         <P><input type="image" src="images/tomatosauce.png" title="Tomatensoße" id="but17" value="Tomatensauce" onclick="hinzufuegen(this.value);"></input>
+                         <P><input type="image" src="images/tomatosauce.png" title="Tomatensoße" id="but17" value="Tomatensauce" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/currysauce.png" title="Currysoße" id="but18" value="Currysauce" onclick="hinzufuegen(this.value);"> </input></p> 
                          <p><h2>Pizza Veränderungen</h2></p>
                          <P><input type="image" src="images/drehen.png" title="Pizza-Dreh-Ansicht" id="fertig" value="Pizza-Beweg-Ansicht" onclick="viewPointChange();"> </input>
+                         <input type="image" src="images/belegen.png" title="weitere Zutaten hinzufügen" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange2();"> </input>
+                         <input type="image" src="images/pizzafertig2.png" title="Pizza bestellen" id="fertig" value="Pizza Fertig" onclick=""> </input>
                         </div>
                         <br />
                         
