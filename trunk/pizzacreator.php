@@ -463,7 +463,8 @@ if(!session_is_registered(id)) {
                          <input type="image" src="images/cheese.png" title="Käse" id="but5" value="K&auml;se" onclick="hinzufuegen(this.value);"> </input></p>
 						 <p><h2>Soßen</h2></p>
                          <P><input type="image" src="images/tomatosauce.png" title="Tomatensoße" id="but17" value="Tomatensauce" onclick="hinzufuegen(this.value);"> </input>
-                         <input type="image" src="images/currysauce.png" title="Currysoße" id="but18" value="Currysauce" onclick="hinzufuegen(this.value);"> </input></p> 
+                         <input type="image" src="images/currysauce.png" title="Currysoße" id="but18" value="Currysauce" onclick="hinzufuegen(this.value);"> </input>
+                         <input type="image" src="images/keinesauce.png" title="keine Soße" id="but19" value="NoSauce" onclick="hinzufuegen(this.value);"> </input></p> 
                          <p><h2>Pizza Veränderungen</h2></p>
                          <P><input type="image" src="images/drehen.png" title="Pizza-Dreh-Ansicht" id="fertig" value="Pizza-Beweg-Ansicht" onclick="viewPointChange();"> </input>
                          <input type="image" src="images/belegen.png" title="weitere Zutaten hinzufügen" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange2();"> </input>
