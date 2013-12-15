@@ -411,7 +411,8 @@
 	</div>
        <div id="content">
        <div>
-		<h1>Pizza Blast</h1>
+		<h1>Pizza Creator</h1>
+        <br />
 
 					 <x3d id='boxes' DEF='boxes' showStat='false' showLog='false' style='width:500px; height:500px; border:0; margin:0; padding:0;'>
 				       <scene id="scene" DEF='scene'>
@@ -419,40 +420,30 @@
 							<!-- hier hin -->
 						<scene>
 					</x3d>
-					<p id="lala">Test</p>
-
-						<!--<input type="button" id="but" value="Entfernen" onclick="removeNode();"> </input><br />
-
-						<img width="10%" src="miau.jpg" onclick="changeTexture('miau.jpg');" style="cursor:pointer;" border="1">
-						<br />
-						<img width="10%" src="fladenbrottextur_512.jpg" onclick="changeTexture('fladenbrottextur_512.jpg');" style="cursor:pointer;" border="1">
-						<br />
-						<img width="10%" src="salami.jpg" onclick="changeTexture('salami.jpg');" style="cursor:pointer;" border="1">-->
-
-						<p>
-						<!--<input type="image" src="bla.jpg" id="but1" value="Salami" onclick="hinzufuegen(this.value);"></input><br />-->
-						<h2>Fleisch</h2><br />
-                        <div id="food">Salami:</h3> <input type="image" src="images/schinken.png" height="38" width="40" id="but2" value="Schinken" onclick="hinzufuegen(this.value);"> </input> </div>  <br />
+					<h1 id="lala">Zutatenliste</h1>
+                    <br/>
+						<p><h2>Fleisch</h2><br />
+                        <div id="meat"> 
+	                     <input type="image" src="images/salami.png" id="but1" value="Salami" onclick="hinzufuegen(this.value);"> Salami </input> </p>
+                         Pepperonisalami <input type="image" src="images/psalami.png" id="but17" value="Schinken" onclick="hinzufuegen(this.value);"> </input>
+                         Shinken: <input type="image" src="images/schinken.png" id="but2" value="Schinken" onclick="hinzufuegen(this.value);"> </input>
+                        Thunfisch: <input type="image" src="images/tuna.png" id="but5" value="Thunfisch" onclick="hinzufuegen(this.value);"> </input>
+                        <h2>Obst und Gemüse</h2><br />
+                        Pilz:  <input type="image" src="images/mushroom.png" id="but3" value="Pilz" onclick="hinzufuegen(this.value);"></input>
+                         Tomate: <input type="image" src="images/tomato.png" id="but4" value="Tomate" onclick="hinzufuegen(this.value);"> </input>
+                         Olive: <input type="image" src="images/olives.png" id="but6" value="Olive" onclick="hinzufuegen(this.value);"> </input>
+                        Spinat: <input type="image" src="images/spinach.png" id="but7" value="Spinat" onclick="hinzufuegen(this.value);"> </input><br/>
+                        Ananas:  <input type="image" src="images/pineapple.png" id="but9" value="Ananas" onclick="hinzufuegen(this.value);"></input>
+                         Mais: <input type="image" src="images/maize.png" id="but10" value="Mais" onclick="hinzufuegen(this.value);"> </input>
+                         Ei: <input type="image" src="images/egg.png" id="but11" value="Ei" onclick="hinzufuegen(this.value);"> </input>
+                        Paprika: <input type="image" src="images/paprika.png" id="but12" value="Paprika" onclick="hinzufuegen(this.value);"> </input>
+                         Chili:  <input type="image" src="images/chili.png" id="but13" value="Chili" onclick="hinzufuegen(this.value);"></input>
+                         Zwiebel: <input type="image" src="images/onion.png" id="but14" value="Zwiebel" onclick="hinzufuegen(this.value);"> </input>
+                         Basilikum: <input type="image" src="images/basil.png" id="but15" value="Basilikum" onclick="hinzufuegen(this.value);"> </input>
+                        </div>
+                        
                         
 				<form>
-				Fleisch<br />
-					<input type="button" id="but1" value="Salami" onclick="hinzufuegen(this.form.but1.value);"></input>
-					
-					
-				  <input type="button" id="but8" value="Thunfisch" onclick="hinzufuegen(this.form.but8.value);"> </input><br />
-					<input type="button" id="but17" value="Pepperonisalami" onclick="hinzufuegen(this.form.but17.value);"> </input><br />
-				<br /><br />Grünzeug<br />
-					<input type="button" id="but3" value="Pilz" onclick="hinzufuegen(this.form.but3.value);"> </input><br />
-					<input type="button" id="but4" value="Tomate" onclick="hinzufuegen(this.form.but4.value);"> </input><br />
-					<input type="button" id="but6" value="Olive" onclick="hinzufuegen(this.form.but6.value);"> </input><br />
-					<input type="button" id="but7" value="Spinat" onclick="hinzufuegen(this.form.but7.value);"> </input><br />
-					<input type="button" id="but9" value="Ananas" onclick="hinzufuegen(this.form.but9.value);"> </input><br />
-					<input type="button" id="but10" value="Mais" onclick="hinzufuegen(this.form.but10.value);"> </input><br />
-					<input type="button" id="but11" value="Ei" onclick="hinzufuegen(this.form.but11.value);"> </input><br />
-					<input type="button" id="but12" value="Paprika" onclick="hinzufuegen(this.form.but12.value);"> </input><br />
-					<input type="button" id="but13" value="Chili" onclick="hinzufuegen(this.form.but13.value);"> </input><br />
-					<input type="button" id="but14" value="Zwiebel" onclick="hinzufuegen(this.form.but14.value);"> </input><br />
-					<input type="button" id="but15" value="Basilikum" onclick="hinzufuegen(this.form.but15.value);"> </input><br />
 
 				<br /><br />K&auml;se<br />
 					<input type="button" id="but16" value="Mozzarella" onclick="hinzufuegen(this.form.but16.value);"> </input><br />
