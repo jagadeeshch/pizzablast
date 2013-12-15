@@ -11,7 +11,7 @@ if(!session_is_registered(id)) {
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
         <link rel="stylesheet" href="x3dom/x3dom.css" type="text/css" />
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"> </script>
@@ -408,7 +408,7 @@ if(!session_is_registered(id)) {
   </script>
 </head>
 
-<body>
+<body tracingsrc="images/pizzafertig2.png" tracingopacity="100">
  <div id="header">
    <div>
 			<ul class="first">
@@ -471,8 +471,8 @@ if(!session_is_registered(id)) {
                          <input type="image" src="images/zutatloeschen.png" title="Zutaten löschen" id="entfernen" value="Zutat entfernen starten" onclick="removeZutat();"> </input>
                          <input type="image" src="images/zutatloeschenfertig.png" title="Pizza weiter belegen" id="entfernen" value="Zutat entfernen beenden" onclick="stopRemove();"> </input>
                          <input type="image" src="images/keinezutaten.png" title="Alle Zutaten löschen" id="fertig" value="Pizza Fertig" onclick=""> </input>
-                         <input type="image" src="images/pizzafertig2.png" title="Pizza bestellen" id="fertig" value="Pizza Fertig" onclick=""> </input>
-                        </div>
+                         
+         </div>
                         
 					<div id=preise>
 					<p id="Auswahl" style="font-size:18px">Preisliste der ausgewählten Zutaten: </p>
@@ -497,7 +497,8 @@ if(!session_is_registered(id)) {
                     <p id="Tomatensoße" style="font-size:14px"></p>
                     <p id="Currysoße" style="font-size:14px"></p>
                     ----------------------------------------
-                    <p id="Gesamtsumme" style="font-size:20px"><strong>Gesamtpreis: 3 €</strong></p>
+                    <p id="Gesamtsumme" style="font-size:20px"><strong>Gesamtpreis: 3 €</strong> &nbsp; &nbsp; &nbsp;  
+                    <input type="image" src="images/pizzafertig2.png" title="Pizza bestellen" id="fertig" value="Pizza Fertig" onclick=""> </input> </p>
                     </div>
     </div>
     </div>
