@@ -128,7 +128,7 @@ p a
 
 #content p, #content div p 
 {
-	line-height: 27px;
+	line-height: 10px;
 	padding: 0 10px;
 	text-align: justify;
 	text-shadow: 1px 1px 0 #E7D186;
@@ -148,12 +148,18 @@ p a
 
 #content div div 
 {
-	height: 350px;
+	height: auto;
     margin: 0 0 35px;
     overflow: hidden;
     padding: 0;
     width: auto;
 }
+
+#content meat
+{
+	height: auto;
+}
+
 
 #content div div div 
 {
@@ -171,11 +177,6 @@ p a
 	float: right;
 	height: 350px;
 	width: 403px;
-}
-
-#pizzacreator
-{
-	height: 500px;
 }
 
 #content div div span img 
@@ -498,9 +499,9 @@ form
 	font-size: 16px;
 }
 
-#meat
+#boxes
 {
-
+	position:relative;display:block;line-height:0px;padding:0;display:block;background:#C80 url(images/bg-body.gif);width:50%;height:50%;border-color:#666;
 }
 
 
