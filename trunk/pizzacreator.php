@@ -23,7 +23,7 @@ if(!session_is_registered(id)) {
 
 			//Noch zu implementieren: verhindern, dass die Salami die Pizza verlaesst
 			//						 Textur wechseln einbauen
-			//						 
+			//
 
 			var counter = 1;				//Counter zum vergeben der ID
 			var oldMousePosX = 0;			//Alte X Position der Maus
@@ -35,11 +35,29 @@ if(!session_is_registered(id)) {
 			var ID = "null";
 			var removeAktiv = false;
 			
+			//Zutaten = new Array("Schinken", "Salami", "Pepperonisalami", "Thunfisch", "Pilz", "Tomate", "Olive", "Spinat", "Ananas", "Mais", "Ei", "Paprika", "Chili", 	
+			//"Zwiebel", "Basilikum", "Mozzarella", "Kaese", "Tomatensoße", "Currysoße", "Pizzaboden");
 			
+			ZutatenCounter = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1); //20
+			PreisCounter = new Array(0.25, 0.19, 0.20, 0.35, 0.5, 0.3, 0.3, 0.2, 0.10, 0.10, 0.5, 0.3, 0.5, 0.2, 0.15, 0.35, 0.20, 0.50, 0.75, 4.0); //20
+			
+	
 			  function hinzufuegen(val)
 			    {
-					 if(val == "Schinken")
+					var gesamtsumme = 0.0;
+					for(var i = 0; i < ZutatenCounter.length; i++)
 					{
+						gesamtsumme += ZutatenCounter[i]*PreisCounter[i];
+						
+					}
+					
+					document.getElementById('Gesamtsumme').innerHTML="Gesamtpreis: "+gesamtsumme+" €";
+					
+					if(val == "Schinken")
+					{
+						ZutatenCounter[0] += 1;
+						document.getElementById('Schinken').innerHTML="Schinken: "+ZutatenCounter[0]+" x "+ PreisCounter[0]+" € = "+ (ZutatenCounter[0]*PreisCounter[0]+" €");
+
 						var meinTransform = document.createElement('Transform');
 						meinTransform.setAttribute('id','schinken_tOuter'+counter);
 
@@ -52,25 +70,27 @@ if(!session_is_registered(id)) {
 						var ot = document.getElementById('scene');
 						meinTransform.appendChild(meinInline);
 						ot.appendChild(meinTransform);
-						
+
 						var myI = meinTransform.getAttribute('id');	//Transform, also tOuter
 						var myI2 = meinInline.getAttribute('id');	//Inline, also schinken_inline
-						
+
 						var removeID = document.getElementById(meinTransform.getAttribute('id'));	//Transform, also tOuter
 						var removeID2 = document.getElementById(meinInline.getAttribute('id'));	//Inline, also schinken_inline
-						
+
 						document.getElementById(myI).onmousedown = function(evt)
 						{
 							if(drag == true)
 							{
 								if(removeAktiv == true)
 								{
+									ZutatenCounter[0] -= 1;
+									document.getElementById('Schinken').innerHTML="Schinken: "+ZutatenCounter[0]+" x "+ PreisCounter[0]+" € = "+ (ZutatenCounter[0]*PreisCounter[0]+" €");
 									var test = removeID.getAttribute('id');
 									var test2 = removeID2.getAttribute('id');
 									var rinline = document.getElementById(test);
 									var rinline2 = document.getElementById('test2');
-									var removed = ot.removeChild(rinline);	
-									var removed2 = ot.removeChild(rinline2);				
+									var removed = ot.removeChild(rinline);
+									var removed2 = ot.removeChild(rinline2);
 								}
 								else
 								{
@@ -84,7 +104,7 @@ if(!session_is_registered(id)) {
 								}
 							}
 						}
-						
+
 						document.getElementById(myI).onmousemove = function(evt)
 						{
 							if (myI == ID)
@@ -94,12 +114,11 @@ if(!session_is_registered(id)) {
 									if(mousedown == true)
 									{
 											newMousePosX = evt.layerX;
-											document.getElementById('lala').innerHTML="Maus:ad "+newMousePosX;
 
 											newMousePosY = evt.layerY;
 											var differenz = (newMousePosX - oldMousePosX) / 15 ;
 											var differenzY = (newMousePosY - oldMousePosY) / 15  ;
-	
+
 											var newId = myI+"__trans";
 
 											var position = document.getElementById(newId).getAttribute("translation");
@@ -112,14 +131,13 @@ if(!session_is_registered(id)) {
 											var neuX = Number(x);
 											var neuY = Number(y);
 
-											//document.getElementById('lala').innerHTML="Maus: "+oldMousePosX+ " Position: "+neuX+" "+neuY+" "+z+ " mousedown: "+mousedown;
 
 											neuX = neuX + differenz;
 											neuY = neuY - differenzY;
 
 											oldMousePosX = newMousePosX;
 											oldMousePosY = newMousePosY;
-	
+
 											document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
 											newMousePosX = 0;
@@ -127,18 +145,22 @@ if(!session_is_registered(id)) {
 								}
 							}
 						}
-						
+
 						document.onmouseup = function (evt)
 						{
 							mousedown = false;
 							ID = "null";
 						}
-						
+
 						counter++;
 						return false;
 					}
-					 if(val == "Ananas")
+					
+					else if(val == "Ananas")
 					{
+						ZutatenCounter[8] += 1;
+						document.getElementById('Ananas').innerHTML = "Ananas: "+ZutatenCounter[8]+" x "+ PreisCounter[8]+" € = "+ (ZutatenCounter[8]*PreisCounter[8]+" €");
+
 						var meinTransform = document.createElement('Transform');
 						meinTransform.setAttribute('id','ananas_tOuter'+counter);
 
@@ -151,25 +173,27 @@ if(!session_is_registered(id)) {
 						var ot = document.getElementById('scene');
 						meinTransform.appendChild(meinInline);
 						ot.appendChild(meinTransform);
-						
+
 						var myI = meinTransform.getAttribute('id');	//Transform, also tOuter
 						var myI2 = meinInline.getAttribute('id');	//Inline, also schinken_inline
-						
+
 						var removeID = document.getElementById(meinTransform.getAttribute('id'));	//Transform, also tOuter
 						var removeID2 = document.getElementById(meinInline.getAttribute('id'));	//Inline, also schinken_inline
-						
+
 						document.getElementById(myI).onmousedown = function(evt)
 						{
 							if(drag == true)
 							{
 								if(removeAktiv == true)
 								{
+									ZutatenCounter[8] -= 1;
+									document.getElementById('Ananas').innerHTML="Ananas: "+ZutatenCounter[8]+" x "+ PreisCounter[8]+" € = "+ (ZutatenCounter[8]*PreisCounter[8]+" €");
 									var test = removeID.getAttribute('id');
 									var test2 = removeID2.getAttribute('id');
 									var rinline = document.getElementById(test);
 									var rinline2 = document.getElementById('test2');
-									var removed = ot.removeChild(rinline);	
-									var removed2 = ot.removeChild(rinline2);				
+									var removed = ot.removeChild(rinline);
+									var removed2 = ot.removeChild(rinline2);
 								}
 								else
 								{
@@ -183,7 +207,7 @@ if(!session_is_registered(id)) {
 								}
 							}
 						}
-						
+
 						document.getElementById(myI).onmousemove = function(evt)
 						{
 							if (myI == ID)
@@ -193,12 +217,11 @@ if(!session_is_registered(id)) {
 									if(mousedown == true)
 									{
 											newMousePosX = evt.layerX;
-											document.getElementById('lala').innerHTML="Maus:ad "+newMousePosX;
 
 											newMousePosY = evt.layerY;
 											var differenz = (newMousePosX - oldMousePosX) / 15 ;
 											var differenzY = (newMousePosY - oldMousePosY) / 15  ;
-	
+
 											var newId = myI+"__trans";
 
 											var position = document.getElementById(newId).getAttribute("translation");
@@ -211,14 +234,13 @@ if(!session_is_registered(id)) {
 											var neuX = Number(x);
 											var neuY = Number(y);
 
-											//document.getElementById('lala').innerHTML="Maus: "+oldMousePosX+ " Position: "+neuX+" "+neuY+" "+z+ " mousedown: "+mousedown;
 
 											neuX = neuX + differenz;
 											neuY = neuY - differenzY;
 
 											oldMousePosX = newMousePosX;
 											oldMousePosY = newMousePosY;
-	
+
 											document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
 											newMousePosX = 0;
@@ -226,19 +248,25 @@ if(!session_is_registered(id)) {
 								}
 							}
 						}
-						
+
 						document.onmouseup = function (evt)
 						{
 							mousedown = false;
 							ID = "null";
 						}
-						
+
 						counter++;
 						return false;
 					}
 					
+					
+					
+					
 					else if(val == "Tomate")
 					{
+						ZutatenCounter[5] += 1;
+						document.getElementById('Tomate').innerHTML = "Tomate: "+ZutatenCounter[5]+" x "+ PreisCounter[5]+" € = "+ (ZutatenCounter[5]*PreisCounter[5]+" €");
+
 						var meinTransform = document.createElement('Transform');
 						meinTransform.setAttribute('id','tomate_tOuter'+counter);
 
@@ -251,20 +279,41 @@ if(!session_is_registered(id)) {
 						var ot = document.getElementById('scene');
 						meinTransform.appendChild(meinInline);
 						ot.appendChild(meinTransform);
-						
-						var myI = "tomate_tOuter"+counter;
-						
+
+						var myI = meinTransform.getAttribute('id');	//Transform, also tOuter
+						var myI2 = meinInline.getAttribute('id');	//Inline, also schinken_inline
+
+						var removeID = document.getElementById(meinTransform.getAttribute('id'));	//Transform, also tOuter
+						var removeID2 = document.getElementById(meinInline.getAttribute('id'));	//Inline, also schinken_inline
+
 						document.getElementById(myI).onmousedown = function(evt)
 						{
-							if (ID == "null")
+							if(drag == true)
 							{
-								oldMousePosX = evt.layerX;
-								oldMousePosY = evt.layerY;
-								mousedown = true;
-								ID = myI;
+								if(removeAktiv == true)
+								{
+									ZutatenCounter[5] -= 1;
+									document.getElementById('Tomate').innerHTML="Tomate: "+ZutatenCounter[5]+" x "+ PreisCounter[5]+" € = "+ (ZutatenCounter[5]*PreisCounter[5]+" €");
+									var test = removeID.getAttribute('id');
+									var test2 = removeID2.getAttribute('id');
+									var rinline = document.getElementById(test);
+									var rinline2 = document.getElementById('test2');
+									var removed = ot.removeChild(rinline);
+									var removed2 = ot.removeChild(rinline2);
+								}
+								else
+								{
+									if (ID == "null")
+									{
+										oldMousePosX = evt.layerX;
+										oldMousePosY = evt.layerY;
+										mousedown = true;
+										ID = myI;
+									}
+								}
 							}
 						}
-						
+
 						document.getElementById(myI).onmousemove = function(evt)
 						{
 							if (myI == ID)
@@ -273,60 +322,58 @@ if(!session_is_registered(id)) {
 								{
 									if(mousedown == true)
 									{
-										newMousePosX = evt.layerX;
-										document.getElementById('lala').innerHTML="Maus:ad "+newMousePosX;
+											newMousePosX = evt.layerX;
 
-										newMousePosY = evt.layerY;
-										var differenz = (newMousePosX - oldMousePosX) / 15 ;
-										var differenzY = (newMousePosY - oldMousePosY) / 15  ;
-	
-										var newId = myI+"__trans";
+											newMousePosY = evt.layerY;
+											var differenz = (newMousePosX - oldMousePosX) / 15 ;
+											var differenzY = (newMousePosY - oldMousePosY) / 15  ;
 
-										var position = document.getElementById(newId).getAttribute("translation");
-										var res = position.split(" ");
+											var newId = myI+"__trans";
 
-										var x = res[0];
-										var y = res[1];
-										var z = res[2];
+											var position = document.getElementById(newId).getAttribute("translation");
+											var res = position.split(" ");
 
-										var neuX = Number(x);
-										var neuY = Number(y);
+											var x = res[0];
+											var y = res[1];
+											var z = res[2];
 
-										//document.getElementById('lala').innerHTML="Maus: "+oldMousePosX+ " Position: "+neuX+" "+neuY+" "+z+ " mousedown: "+mousedown;
+											var neuX = Number(x);
+											var neuY = Number(y);
 
-										neuX = neuX + differenz;
-										neuY = neuY - differenzY;
 
-										oldMousePosX = newMousePosX;
-										oldMousePosY = newMousePosY;
+											neuX = neuX + differenz;
+											neuY = neuY - differenzY;
 
-										document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
+											oldMousePosX = newMousePosX;
+											oldMousePosY = newMousePosY;
 
-										newMousePosX = 0;
+											document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
+
+											newMousePosX = 0;
 									}
 								}
 							}
 						}
-						
+
 						document.onmouseup = function (evt)
 						{
 							mousedown = false;
 							ID = "null";
 						}
-						
+
 						counter++;
 						return false;
 					}
-					
+
 			     };
-				 
+
 
 				function removeZutat()
 				{
 					//RemoveAktiv wird auf true gesetzt, man kann löschen
 					removeAktiv = true;
 				}
-				
+
 				function stopRemove()
 				{
 					//RemoveAktiv wird auf false gesetzt, man kann nicht mehr löschen
@@ -354,7 +401,6 @@ if(!session_is_registered(id)) {
 					document.getElementById("boxes").runtime.resetView();
 					drag = true;
 				}
-
   </script>
 </head>
 
@@ -384,9 +430,30 @@ if(!session_is_registered(id)) {
                             <!-- hier hin -->
 						<scene>
 					</x3d>
-					<p id="lala">Test</p>
-
-						<!--<input type="button" id="but" value="Entfernen" onclick="removeNode();"> </input><br />
+					<p id="Auswahl">Sie haben ausgew&auml;hlt:</p>
+                    <p id="Schinken">Schinken:</p>
+                    <p id="Salami">Salami:</p>
+                    <p id="Pepperonisalami">Pepperonisalami:<br /</p>
+                    <p id="Thunfisch">Thunfisch:</p>
+                    <p id="Pilz">Pilz:</p>
+                    <p id="Tomate">Tomate:</p>
+                    <p id="Olive">Olive:</p>
+                    <p id="Spinat">Spinat:</p>
+                    <p id="Ananas">Ananas:</p>
+                    <p id="Mais">Mais:</p>
+                    <p id="Ei">Ei:</p>
+                    <p id="Paprika">Paprika:</p>
+                    <p id="Chili">Chili:</p>
+                    <p id="Zwiebel">Zwiebel:</p>
+                    <p id="Basilikum">Basilikum:</p>
+                    <p id="Mozzarella">Mozzarella:</p>
+                    <p id="Käse">K&auml;se:</p>
+                    <p id="Tomatensoße">Tomatensoße:</p>
+                    <p id="Currysoße">Currysoße</p>
+                    <p>Pizzaboden: 4 €</p>
+                    <p id="Gesamtsumme">Gesamtpreis: 4 €</p>
+              
+<!--
 
 						<img width="10%" src="miau.jpg" onclick="changeTexture('miau.jpg');" style="cursor:pointer;" border="1">
 						<br />
@@ -395,15 +462,14 @@ if(!session_is_registered(id)) {
 						<img width="10%" src="salami.jpg" onclick="changeTexture('salami.jpg');" style="cursor:pointer;" border="1">-->
 
 						<p>
-						<!--<input type="image" src="bla.jpg" id="but1" value="Salami" onclick="hinzufuegen(this.value);"></input><br />-->
 						<h2>Fleisch</h2><br />
                         <div id="food">Salami:</h3> <input type="image" src="images/schinken.png" height="38" width="40" id="but2" value="Schinken" onclick="hinzufuegen(this.value);"> </input> </div>  <br />
-                        
+
 				<form>
 				Fleisch<br />
 					<input type="button" id="but1" value="Salami" onclick="hinzufuegen(this.form.but1.value);"></input>
-					
-					
+
+
 				  <input type="button" id="but8" value="Thunfisch" onclick="hinzufuegen(this.form.but8.value);"> </input><br />
 					<input type="button" id="but17" value="Pepperonisalami" onclick="hinzufuegen(this.form.but17.value);"> </input><br />
 				<br /><br />Grünzeug<br />
