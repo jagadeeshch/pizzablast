@@ -204,14 +204,16 @@ p a
 	height: 346px;
 }
 
-#content div div.section span {
+#content div div.section span 
+{
 	float: left;
 	height: auto;
     margin: 10px;
     width: auto;
 }
 
-#content div div.section span img {
+#content div div.section span img 
+{
 	border: 1px solid #a59849;
 	margin: 0;
 }
@@ -223,7 +225,8 @@ p a
     width: 555px;
 }
 
-#content div div.section div h2 {
+#content div div.section div h2 
+{
 	background: url(../images/separator.gif) repeat-x center bottom;
 	color: #1f1b0c;
 	font-size: 36px;
@@ -234,7 +237,8 @@ p a
 	text-shadow: 1px 1px 0 #fefad6;
 }
 
-#content div div.section ul {
+#content div div.section ul 
+{
 	background: url(../images/border-dashed.gif) repeat-y center top;
 	clear: both;
 	height: 242px;
@@ -244,17 +248,20 @@ p a
 	padding: 0;
 }
 
-#content div div.section ul li {
+#content div div.section ul li 
+{
 	float: left;
     margin-left: 45px;
     width: 250px;
 }
 
-#content div div.section ul li.first {
+#content div div.section ul li.first 
+{
 	margin-left: 10px;
 }
 
-#content div div.section ul li table {
+#content div div.section ul li table 
+{
 	color: #88773d;
 	font-size: 16px;
 	line-height: 20px;
@@ -262,7 +269,8 @@ p a
 	text-shadow: none;
 }
 
-#content div div.section ul li table tr td span {
+#content div div.section ul li table tr td span 
+{
 	background: none;
 	color: #584711;
 	float: none;
@@ -271,13 +279,15 @@ p a
 	padding-left: 15px;
 }
 
-#footer {
+#footer 
+{
 	background: url(../images/bg-footer-tall.jpg) repeat-x center top;
 	margin-top: 50px;
 	width: 100%;
 }
 
-#footer div {
+#footer div 
+{
 	background: url(../images/bg-footer-top-shadow.jpg) no-repeat top center;
 	margin: 0 auto;
 	padding-top: 56px;
@@ -285,44 +295,52 @@ p a
 	width: 960px;
 }
 
-#footer div ul {
+#footer div ul 
+{
 	list-style: none;
 	margin: 0;
 	overflow: hidden;
 	padding: 0;
 }
 
-#footer div ul li {
+#footer div ul li 
+{
 	float: left;
 	height: 327px;
 	width: 320px;
 }
 
-#footer div ul li#pasta {
+#footer div ul li#pasta 
+{
 	background: url(../images/bg-pasta.jpg) no-repeat;
 }
 
-#footer div ul li#pizza {
+#footer div ul li#pizza 
+{
 	background: url(../images/bg-pizza.jpg) no-repeat;
 }
 
-#footer div ul li#callus {
+#footer div ul li#callus 
+{
 	background: url(../images/bg-contact.jpg) no-repeat;
 }
 
 
-#footer div ul li div {
+#footer div ul li div 
+{
 	background: none;
 	height: 200px;
 	padding: 0;
 	width: 249px;
 }
 
-#footer div ul li#pasta div {
+#footer div ul li#pasta div 
+{
 	margin: 0 0 0 16px;	
 }
 
-#footer div ul li#pizza div {
+#footer div ul li#pizza div 
+{
 	margin: 0 0 0 25px;	
 }
 
@@ -330,7 +348,8 @@ p a
 	margin: 0 0 0 30px;	
 }
 
-#footer div ul li div span {
+#footer div ul li div span 
+{
 	background: url(../images/bg-heading.jpg) no-repeat;
 	color: #C00;
 	display: block;
@@ -341,12 +360,14 @@ p a
 	text-align: center;
 }
 
-#footer div ul li div p, #footer div ul li div p span {
+#footer div ul li div p, #footer div ul li div p span 
+{
 	color: #9c9c9b;
 	font-size: 16px;
 }
 
- #footer div ul li div p span  {
+#footer div ul li div p span  
+{
 	background: none;
 	font-weight: normal;
     height: auto;
@@ -477,6 +498,9 @@ form
 	font-size: 16px;
 }
 
+#meat
+{
 
+}
 
 
