@@ -426,7 +426,11 @@ if(!session_is_registered(id)) {
 	</div>
        <div id="content">
        <div>
-		<h1>Pizza Blast</h1>
+       <br />
+       <br />
+		<h1>Pizza Creator</h1>
+        <br/>
+        <br/>
 
 					 <x3d id='boxes' DEF='boxes' showStat='false' showLog='false' style='width:500px; height:500px; border:0; margin:0; padding:0;'>
 				       <scene id="scene" DEF='scene'>
@@ -436,12 +440,14 @@ if(!session_is_registered(id)) {
 					</x3d>
 
 
-                    	<p><h2>Fleisch</h2></p>
-                        <div id="meat">
-	                     <P><input type="image" src="images/salami.png" id="but1" value="Salami" onclick="hinzufuegen(this.value);"></input>
+                    	<div id="meat">
+                        <br />
+                        <br />
+                        <p><h2>Fleisch</h2></p>
+                        <P><input type="image" src="images/salami.png" id="but1" value="Salami" onclick="hinzufuegen(this.value);"></input>
                          <input type="image" src="images/psalami.png" id="but17" value="Schinken" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/schinken.png" id="but2" value="Schinken" onclick="hinzufuegen(this.value);"> </input>
-                         <input type="image" src="images/tuna.png" id="but5" value="Thunfisch" onclick="hinzufuegen(this.value);"> </input> </p>
+                         <input type="image" src="images/tuna.png" id="but8" value="Thunfisch" onclick="hinzufuegen(this.value);"> </input> </p>
                         <p><h2>Obst und Gemüse</h2></p>
                          <P><input type="image" src="images/mushroom.png" id="but3" value="Pilz" onclick="hinzufuegen(this.value);"></input>
                          <input type="image" src="images/tomato.png" id="but4" value="Tomate" onclick="hinzufuegen(this.value);"> </input>
@@ -454,67 +460,44 @@ if(!session_is_registered(id)) {
                          <input type="image" src="images/chili.png" id="but13" value="Chili" onclick="hinzufuegen(this.value);"></input>
                          <input type="image" src="images/onion.png" id="but14" value="Zwiebel" onclick="hinzufuegen(this.value);"> </input>
                          <input type="image" src="images/basil.png" id="but15" value="Basilikum" onclick="hinzufuegen(this.value);"> </input></p>
+                         <p><h2>K&auml;sesorten</h2></p>
+                         <P><input type="image" src="images/mozarella.png" id="but16" value="Mozarella" onclick="hinzufuegen(this.value);"></input>
+                         <input type="image" src="images/cheese.png" id="but5" value="K&auml;se" onclick="hinzufuegen(this.value);"> </input></p>
+						 <p><h2>Soßen</h2></p>
+                         <P><input type="image" src="images/tomatosauce.png" id="but17" value="Tomatensauce" onclick="hinzufuegen(this.value);"></input>
+                         
+                         <input type="image" src="images/currysauce.png" id="but18" value="Currysauce" onclick="hinzufuegen(this.value);"> </input></p> 
                         </div>
+                        <br/>
+                        <br/>
+                        <br />
+                        
+					<div id=preise>
+					<p id="Auswahl" style="font-size:18px">Preisliste der ausgewählten Zutaten: </p>
+                    <p style="font-size:14px">Pizzaboden: 3 €</p>
+                    <p id="Schinken" style="font-size:14px" ></p>
+                    <p id="Salami" style="font-size:14px""></p>
+                    <p id="Pepperonisalami" style="font-size:14px"></p>
+                    <p id="Thunfisch" style="font-size:14px"></p>
+                    <p id="Pilz" style="font-size:14px"></p>
+                    <p id="Tomate" style="font-size:14px"></p>
+                    <p id="Olive" style="font-size:14px"></p>
+                    <p id="Spinat" style="font-size:14px"></p>
+                    <p id="Ananas" style="font-size:14px"></p>
+                    <p id="Mais" style="font-size:14px"></p>
+                    <p id="Ei" style="font-size:14px"></p>
+                    <p id="Paprika" style="font-size:14px"></p>
+                    <p id="Chili" style="font-size:14px"></p>
+                    <p id="Zwiebel" style="font-size:14px"></p>
+                    <p id="Basilikum" style="font-size:14px"></p>
+                    <p id="Mozzarella" style="font-size:14px"></p>
+                    <p id="Käse" style="font-size:14px"></p>
+                    <p id="Tomatensoße" style="font-size:14px"></p>
+                    <p id="Currysoße" style="font-size:14px"></p>
+                    ----------------------------------------
+                    <p id="Gesamtsumme" style="font-size:20px"><strong>Gesamtpreis: 3 €</strong></p>
+                    </div>
 
-
-					<p id="Auswahl">Sie haben ausgew&auml;hlt:</p>
-                    <p id="Schinken">Schinken:</p>
-                    <p id="Salami">Salami:</p>
-                    <p id="Pepperonisalami">Pepperonisalami:<br /</p>
-                    <p id="Thunfisch">Thunfisch:</p>
-                    <p id="Pilz">Pilz:</p>
-                    <p id="Tomate">Tomate:</p>
-                    <p id="Olive">Olive:</p>
-                    <p id="Spinat">Spinat:</p>
-                    <p id="Ananas">Ananas:</p>
-                    <p id="Mais">Mais:</p>
-                    <p id="Ei">Ei:</p>
-                    <p id="Paprika">Paprika:</p>
-                    <p id="Chili">Chili:</p>
-                    <p id="Zwiebel">Zwiebel:</p>
-                    <p id="Basilikum">Basilikum:</p>
-                    <p id="Mozzarella">Mozzarella:</p>
-                    <p id="Käse">K&auml;se:</p>
-                    <p id="Tomatensoße">Tomatensoße:</p>
-                    <p id="Currysoße">Currysoße</p>
-                    <p>Pizzaboden: 3 €</p>
-                    <p id="Gesamtsumme">Gesamtpreis: 3 €</p>
-
-<!--
-
-						<img width="10%" src="miau.jpg" onclick="changeTexture('miau.jpg');" style="cursor:pointer;" border="1">
-						<br />
-						<img width="10%" src="fladenbrottextur_512.jpg" onclick="changeTexture('fladenbrottextur_512.jpg');" style="cursor:pointer;" border="1">
-						<br />
-						<img width="10%" src="salami.jpg" onclick="changeTexture('salami.jpg');" style="cursor:pointer;" border="1">-->
-
-						<p>
-						<h2>Fleisch</h2><br />
-                        <div id="food">Salami:</h3> <input type="image" src="images/schinken.png" height="38" width="40" id="but2" value="Schinken" onclick="hinzufuegen(this.value);"> </input> </div>  <br />
-
-				<form>
-				Fleisch<br />
-					<input type="button" id="but1" value="Salami" onclick="hinzufuegen(this.form.but1.value);"></input>
-
-
-				  <input type="button" id="but8" value="Thunfisch" onclick="hinzufuegen(this.form.but8.value);"> </input><br />
-					<input type="button" id="but17" value="Pepperonisalami" onclick="hinzufuegen(this.form.but17.value);"> </input><br />
-				<br /><br />Grünzeug<br />
-					<input type="button" id="but3" value="Pilz" onclick="hinzufuegen(this.form.but3.value);"> </input><br />
-					<input type="button" id="but4" value="Tomate" onclick="hinzufuegen(this.form.but4.value);"> </input><br />
-					<input type="button" id="but6" value="Olive" onclick="hinzufuegen(this.form.but6.value);"> </input><br />
-					<input type="button" id="but7" value="Spinat" onclick="hinzufuegen(this.form.but7.value);"> </input><br />
-					<input type="button" id="but9" value="Ananas" onclick="hinzufuegen(this.form.but9.value);"> </input><br />
-					<input type="button" id="but10" value="Mais" onclick="hinzufuegen(this.form.but10.value);"> </input><br />
-					<input type="button" id="but11" value="Ei" onclick="hinzufuegen(this.form.but11.value);"> </input><br />
-					<input type="button" id="but12" value="Paprika" onclick="hinzufuegen(this.form.but12.value);"> </input><br />
-					<input type="button" id="but13" value="Chili" onclick="hinzufuegen(this.form.but13.value);"> </input><br />
-					<input type="button" id="but14" value="Zwiebel" onclick="hinzufuegen(this.form.but14.value);"> </input><br />
-					<input type="button" id="but15" value="Basilikum" onclick="hinzufuegen(this.form.but15.value);"> </input><br />
-
-				<br /><br />K&auml;se<br />
-					<input type="button" id="but16" value="Mozzarella" onclick="hinzufuegen(this.form.but16.value);"> </input><br />
-					<input type="button" id="but5" value="K&auml;se" onclick="hinzufuegen(this.form.but5.value);"> </input><br /><br />
 					<input type="button" id="fertig" value="Pizza-Beweg-Ansicht" onclick="viewPointChange();"> </input><br />
 					<input type="button" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange2();"> </input><br />
 					<input type="button" id="entfernen" value="Zutat entfernen starten" onclick="removeZutat();"> </input><br />
