@@ -1,5 +1,5 @@
 <X3D id='zutat' DEF='zutat' version="3.0" profile="Immersive" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.0.xsd">
-	<Scene id="salami" DEF='salami'>
+	<Scene id="schinken" DEF='schinken'>
 		<navigationInfo type='"NONE"'></navigationInfo>
 		<Transform DEF='trans' id="trans"
 		           translation='-0.56856 0.022067 0.6'
@@ -9,8 +9,8 @@
 				<Group DEF="group_ME_Circle">
 					<Shape>
 						<Appearance>
-							<ImageTexture DEF="salami_png"
-							              url='"salami512.png" "salami512.png"'
+							<ImageTexture DEF="IM_Schinken5212_png"
+							              url='"Schinken5212.png" "Schinken5212.png"'
 							              />
 						</Appearance>
 						<IndexedTriangleSet solid="true"
