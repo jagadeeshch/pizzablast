@@ -2,7 +2,7 @@
 	<Scene id="pepperonisalami" DEF='pepperonisalami'>
 		<navigationInfo type='"NONE"'></navigationInfo>
 		<Transform DEF='trans' id="trans"
-		           translation='-0.56856 0.022067 0.6'
+		           translation='-0.56856 0.022067 0.8'
 		           scale="2.000000 2.000000 7.000000"
 		           rotation='0 0 100 1.57'
 		           >

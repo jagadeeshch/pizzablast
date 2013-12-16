@@ -4,7 +4,7 @@
 
 
 		<Transform  DEF='trans' id="trans" 
-		           translation="0.196121 1.104982 0.6"
+		           translation="0.196121 1.104982 0.7"
 		           scale="3.000000 3.000000 -3.000000"
 		            rotation='0 0 100 1.57'
 		           >
