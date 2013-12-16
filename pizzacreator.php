@@ -131,7 +131,7 @@ if(!session_is_registered(id)) {
 													
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
-													if(neuX2 + neuY2 <= 99)
+													if(neuX2 + neuY2 <= 105)
 													{
 														oldMousePosX = newMousePosX;
 														oldMousePosY = newMousePosY;
@@ -469,7 +469,7 @@ if(!session_is_registered(id)) {
 													
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
-													if(neuX2 + neuY2 <= 115)
+													if(neuX2 + neuY2 <= 105)
 													{
 														oldMousePosX = newMousePosX;
 														oldMousePosY = newMousePosY;
@@ -584,7 +584,7 @@ if(!session_is_registered(id)) {
 													
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
-													if(neuX2 + neuY2 <= 115)
+													if(neuX2 + neuY2 <= 125)
 													{
 														oldMousePosX = newMousePosX;
 														oldMousePosY = newMousePosY;
@@ -921,15 +921,15 @@ if(!session_is_registered(id)) {
 													
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
-													//if(neuX2 + neuY2 <= 115)
-													//{
+													if(neuX2 + neuY2 <= 115)
+													{
 														oldMousePosX = newMousePosX;
 														oldMousePosY = newMousePosY;
 
 														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
 														newMousePosX = 0;
-													//}
+													}
 											}
 										}
 									}
@@ -1151,15 +1151,15 @@ if(!session_is_registered(id)) {
 													
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
-													//if(neuX2 + neuY2 <= 115)
-													//{
+													if(neuX2 + neuY2 <= 100)
+													{
 														oldMousePosX = newMousePosX;
 														oldMousePosY = newMousePosY;
 
 														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
 														newMousePosX = 0;
-													//}
+													}
 											}
 										}
 									}
@@ -1266,15 +1266,15 @@ if(!session_is_registered(id)) {
 													
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
-													//if(neuX2 + neuY2 <= 115)
-													//{
+													if(neuX2 + neuY2 <= 125)
+													{
 														oldMousePosX = newMousePosX;
 														oldMousePosY = newMousePosY;
 
 														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
 														newMousePosX = 0;
-													//}
+													}
 											}
 										}
 									}
@@ -1379,15 +1379,15 @@ if(!session_is_registered(id)) {
 													
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
-													//if(neuX2 + neuY2 <= 115)
-													//{
+													if(neuX2 + neuY2 <= 112)
+													{
 														oldMousePosX = newMousePosX;
 														oldMousePosY = newMousePosY;
 
 														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
 														newMousePosX = 0;
-													//}
+													}
 											}
 										}
 									}
@@ -1493,15 +1493,15 @@ if(!session_is_registered(id)) {
 													
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
-													//if(neuX2 + neuY2 <= 115)
-													//{
+													if(neuX2 + neuY2 <= 145)
+													{
 														oldMousePosX = newMousePosX;
 														oldMousePosY = newMousePosY;
 
 														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
 														newMousePosX = 0;
-													//}
+													}
 											}
 										}
 									}
@@ -1607,15 +1607,15 @@ if(!session_is_registered(id)) {
 													
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
-													//if(neuX2 + neuY2 <= 115)
-													//{
+													if(neuX2 + neuY2 <= 115)
+													{
 														oldMousePosX = newMousePosX;
 														oldMousePosY = newMousePosY;
 
 														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
 
 														newMousePosX = 0;
-													//}
+													}
 											}
 										}
 									}

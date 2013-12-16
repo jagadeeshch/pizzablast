@@ -3,7 +3,7 @@
 		<navigationInfo type='"NONE"'></navigationInfo>
 		
 		<Transform DEF='trans' id="trans"
-		           translation="-0.386842 -0.209474 1"
+		           translation="-0.386842 -0.209474 1.2"
 		           scale="0.500000 0.500000 0.500000"
 		            rotation='100 0 0 1.57'
 		           >
