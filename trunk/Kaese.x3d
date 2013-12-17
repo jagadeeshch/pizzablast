@@ -11,7 +11,7 @@
 				<Group DEF="group_ME_Plane">
 					<Shape>
 						<Appearance>
-							<ImageTexture DEF="IM_Käse512_png"
+							<ImageTexture id="kaese" DEF="kaese"
 							              url='"Kaese512.png" "Kaese512.png"'
 							              />
 						</Appearance>
