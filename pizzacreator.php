@@ -620,7 +620,7 @@ if(!session_is_registered(id)) {
 								meinTransform.setAttribute('id','thunfisch_tOuter'+counter);
 
 								var meinInline = document.createElement('Inline');
-								meinInline.setAttribute('url','thunfisch.x3d');
+								meinInline.setAttribute('url','Thunfisch2.x3d');
 								meinInline.setAttribute('id','thunfisch_inline'+counter);
 								meinInline.setAttribute('mapDefToId', 'true');
 								meinInline.setAttribute('nameSpaceName', 'thunfisch_tOuter'+counter);
@@ -1492,7 +1492,7 @@ if(!session_is_registered(id)) {
 							{
 								ZutatenCounter[15] += 1;
 								berechneGesamtpreis();
-								document.getElementById('Olive').innerHTML = "Mozzarella: "+ZutatenCounter[15]+" x "+ PreisCounter[15]+" € = "+ kaufm(ZutatenCounter[15]*PreisCounter[15])+" €";
+								document.getElementById('Mozzarella').innerHTML = "Mozzarella: "+ZutatenCounter[15]+" x "+ PreisCounter[15]+" € = "+ kaufm(ZutatenCounter[15]*PreisCounter[15])+" €";
 								berechneGesamtpreis();
 
 								var meinTransform = document.createElement('Transform');
@@ -1712,6 +1712,237 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
+
+
+
+
+							else if(val == "Basilikum")
+							{
+								ZutatenCounter[14] += 1;
+								berechneGesamtpreis();
+								document.getElementById('Basilikum').innerHTML = "Basilikum: "+ZutatenCounter[14]+" x "+ PreisCounter[14]+" € = "+ kaufm(ZutatenCounter[14]*PreisCounter[14])+" €";
+								berechneGesamtpreis();
+
+								var meinTransform = document.createElement('Transform');
+								meinTransform.setAttribute('id','basilikum_tOuter'+counter);
+
+								var meinInline = document.createElement('Inline');
+								meinInline.setAttribute('url','Basilikum.x3d');
+								meinInline.setAttribute('id','basilikum_inline'+counter);
+								meinInline.setAttribute('mapDefToId', 'true');
+								meinInline.setAttribute('nameSpaceName', 'basilikum_tOuter'+counter);
+
+								var ot = document.getElementById('scene');
+								meinTransform.appendChild(meinInline);
+								ot.appendChild(meinTransform);
+
+								var myI = meinTransform.getAttribute('id');	//Transform, also tOuter
+								var myI2 = meinInline.getAttribute('id');	//Inline, also schinken_inline
+
+								var removeID = document.getElementById(meinTransform.getAttribute('id'));	//Transform, also tOuter
+								var removeID2 = document.getElementById(meinInline.getAttribute('id'));	//Inline, also schinken_inline
+
+								document.getElementById(myI).onmousedown = function(evt)
+								{
+									if(drag == true)
+									{
+										if(removeAktiv == true)
+										{
+											ZutatenCounter[14] -= 1;
+											berechneGesamtpreis();
+											document.getElementById('Basilikum').innerHTML="Basilikum: "+ZutatenCounter[14]+" x "+ PreisCounter[14]+" € = "+ kaufm(ZutatenCounter[14]*PreisCounter[14])+" €";
+											var test = removeID.getAttribute('id');
+											var test2 = removeID2.getAttribute('id');
+											var rinline = document.getElementById(test);
+											var rinline2 = document.getElementById('test2');
+											var removed = ot.removeChild(rinline);
+											var removed2 = ot.removeChild(rinline2);
+										}
+										else
+										{
+											if (ID == "null")
+											{
+												oldMousePosX = evt.layerX;
+												oldMousePosY = evt.layerY;
+												mousedown = true;
+												ID = myI;
+											}
+										}
+									}
+								}
+
+								document.getElementById(myI).onmousemove = function(evt)
+								{
+									if (myI == ID)
+									{
+										if(drag == true)
+										{
+											if(mousedown == true)
+											{
+													newMousePosX = evt.layerX;
+
+													newMousePosY = evt.layerY;
+													var differenz = (newMousePosX - oldMousePosX) / 15 ;
+													var differenzY = (newMousePosY - oldMousePosY) / 15  ;
+
+													var newId = myI+"__trans";
+
+													var position = document.getElementById(newId).getAttribute("translation");
+													var res = position.split(" ");
+
+													var x = res[0];
+													var y = res[1];
+													var z = res[2];
+
+													var neuX = Number(x);
+													var neuY = Number(y);
+
+
+													neuX = neuX + differenz;
+													neuY = neuY - differenzY;
+
+													var neuX2 = neuX * neuX;
+													var neuY2 = neuY * neuY;
+													if(neuX2 + neuY2 <= 120)
+													{
+														oldMousePosX = newMousePosX;
+														oldMousePosY = newMousePosY;
+
+														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
+
+														newMousePosX = 0;
+													}
+											}
+										}
+									}
+								}
+
+								document.onmouseup = function (evt)
+								{
+									mousedown = false;
+									ID = "null";
+								}
+
+								counter++;
+								return false;
+							}
+
+
+
+							else if(val == "Paprika")
+														{
+															ZutatenCounter[11] += 1;
+															berechneGesamtpreis();
+															document.getElementById('Paprika').innerHTML = "Paprika: "+ZutatenCounter[11]+" x "+ PreisCounter[11]+" € = "+ kaufm(ZutatenCounter[11]*PreisCounter[11])+" €";
+															berechneGesamtpreis();
+
+															var meinTransform = document.createElement('Transform');
+															meinTransform.setAttribute('id','paprika_tOuter'+counter);
+
+															var meinInline = document.createElement('Inline');
+															meinInline.setAttribute('url','Paprika.x3d');
+															meinInline.setAttribute('id','paprika_inline'+counter);
+															meinInline.setAttribute('mapDefToId', 'true');
+															meinInline.setAttribute('nameSpaceName', 'paprika_tOuter'+counter);
+
+															var ot = document.getElementById('scene');
+															meinTransform.appendChild(meinInline);
+															ot.appendChild(meinTransform);
+
+															var myI = meinTransform.getAttribute('id');	//Transform, also tOuter
+															var myI2 = meinInline.getAttribute('id');	//Inline, also schinken_inline
+
+															var removeID = document.getElementById(meinTransform.getAttribute('id'));	//Transform, also tOuter
+															var removeID2 = document.getElementById(meinInline.getAttribute('id'));	//Inline, also schinken_inline
+
+															document.getElementById(myI).onmousedown = function(evt)
+															{
+																if(drag == true)
+																{
+																	if(removeAktiv == true)
+																	{
+																		ZutatenCounter[11] -= 1;
+																		berechneGesamtpreis();
+																		document.getElementById('Paprika').innerHTML="Paprika: "+ZutatenCounter[11]+" x "+ PreisCounter[11]+" € = "+ kaufm(ZutatenCounter[11]*PreisCounter[11])+" €";
+																		var test = removeID.getAttribute('id');
+																		var test2 = removeID2.getAttribute('id');
+																		var rinline = document.getElementById(test);
+																		var rinline2 = document.getElementById('test2');
+																		var removed = ot.removeChild(rinline);
+																		var removed2 = ot.removeChild(rinline2);
+																	}
+																	else
+																	{
+																		if (ID == "null")
+																		{
+																			oldMousePosX = evt.layerX;
+																			oldMousePosY = evt.layerY;
+																			mousedown = true;
+																			ID = myI;
+																		}
+																	}
+																}
+															}
+
+															document.getElementById(myI).onmousemove = function(evt)
+															{
+																if (myI == ID)
+																{
+																	if(drag == true)
+																	{
+																		if(mousedown == true)
+																		{
+																				newMousePosX = evt.layerX;
+
+																				newMousePosY = evt.layerY;
+																				var differenz = (newMousePosX - oldMousePosX) / 15 ;
+																				var differenzY = (newMousePosY - oldMousePosY) / 15  ;
+
+																				var newId = myI+"__trans";
+
+																				var position = document.getElementById(newId).getAttribute("translation");
+																				var res = position.split(" ");
+
+																				var x = res[0];
+																				var y = res[1];
+																				var z = res[2];
+
+																				var neuX = Number(x);
+																				var neuY = Number(y);
+
+
+																				neuX = neuX + differenz;
+																				neuY = neuY - differenzY;
+
+																				var neuX2 = neuX * neuX;
+																				var neuY2 = neuY * neuY;
+																				if(neuX2 + neuY2 <= 135)
+																				{
+																					oldMousePosX = newMousePosX;
+																					oldMousePosY = newMousePosY;
+
+																					document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
+
+																					newMousePosX = 0;
+																				}
+																		}
+																	}
+																}
+															}
+
+															document.onmouseup = function (evt)
+															{
+																mousedown = false;
+																ID = "null";
+															}
+
+															counter++;
+															return false;
+							}
+
+
+
+
 					     };
 
 						 //Quelle: http://www.dcljs.de/faq/antwort.php?Antwort=rechnen_runden#5
@@ -1737,6 +1968,48 @@ if(!session_is_registered(id)) {
 						{
 							//RemoveAktiv wird auf true gesetzt, man kann löschen
 							removeAktiv = true;
+						}
+
+						function removeAll()
+						{
+							var i = 0;
+							var summe = 0;
+							while(i < 19)
+							{
+								summe = summe + ZutatenCounter[i];
+								ZutatenCounter[i] = 0;
+								i++;
+							}
+
+							i = summe;
+
+							while(i > 0)
+							{
+								var myNode = document.getElementsByTagName("inline")[i];
+								myNode.parentNode.removeChild(myNode);
+
+								var myNode1 = document.getElementsByTagName("transform")[i];
+								myNode1.parentNode.removeChild(myNode1);
+								i--;
+							}
+							document.getElementById('Schinken').innerHTML="Schinken: "+ZutatenCounter[0]+" x "+ PreisCounter[0]+" € = "+ kaufm(ZutatenCounter[0]*PreisCounter[0])+" €";
+							document.getElementById('Ananas').innerHTML = "Ananas: "+ZutatenCounter[8]+" x "+ PreisCounter[8]+" € = "+ kaufm(ZutatenCounter[8]*PreisCounter[8])+" €";
+							document.getElementById('Tomate').innerHTML = "Tomate: "+ZutatenCounter[5]+" x "+ PreisCounter[5]+" € = "+ kaufm(ZutatenCounter[5]*PreisCounter[5])+" €";
+							document.getElementById('Salami').innerHTML = "Salami: "+ZutatenCounter[1]+" x "+ PreisCounter[1]+" € = "+ kaufm(ZutatenCounter[1]*PreisCounter[1])+" €";
+							document.getElementById('Pepperonisalami').innerHTML = "Pepperonisalami: "+ZutatenCounter[2]+" x "+ PreisCounter[2]+" € = "+ kaufm(ZutatenCounter[2]*PreisCounter[2])+" €";
+							document.getElementById('Thunfisch').innerHTML = "Thunfisch: "+ZutatenCounter[3]+" x "+ PreisCounter[3]+" € = "+ kaufm(ZutatenCounter[3]*PreisCounter[3])+" €";
+							document.getElementById('Pilz').innerHTML = "Pilz: "+ZutatenCounter[4]+" x "+ PreisCounter[4]+" € = "+ kaufm(ZutatenCounter[4]*PreisCounter[4])+" €";
+							document.getElementById('Kaese').innerHTML = "Käse: "+ZutatenCounter[16]+" x "+ PreisCounter[16]+" € = "+ kaufm(ZutatenCounter[16]*PreisCounter[16])+" €";
+							document.getElementById('Currysauce').innerHTML = "Currysoße: "+ZutatenCounter[18]+" x "+ PreisCounter[18]+" € = "+ kaufm(ZutatenCounter[18]*PreisCounter[18])+" €";
+							document.getElementById('Spinat').innerHTML = "Spinat: "+ZutatenCounter[7]+" x "+ PreisCounter[7]+" € = "+ kaufm(ZutatenCounter[7]*PreisCounter[7])+" €";
+							document.getElementById('Ei').innerHTML = "Ei: "+ZutatenCounter[10]+" x "+ PreisCounter[10]+" € = "+ kaufm(ZutatenCounter[10]*PreisCounter[10])+" €";
+							document.getElementById('Zwiebel').innerHTML = "Zwiebel: "+ZutatenCounter[13]+" x "+ PreisCounter[13]+" € = "+ kaufm(ZutatenCounter[13]*PreisCounter[13])+" €";
+							document.getElementById('Olive').innerHTML = "Olive: "+ZutatenCounter[6]+" x "+ PreisCounter[6]+" € = "+ kaufm(ZutatenCounter[6]*PreisCounter[6])+" €";
+							document.getElementById('Mozzarella').innerHTML = "Mozzarella: "+ZutatenCounter[15]+" x "+ PreisCounter[15]+" € = "+ kaufm(ZutatenCounter[15]*PreisCounter[15])+" €";
+							document.getElementById('Chilli').innerHTML = "Chilli: "+ZutatenCounter[12]+" x "+ PreisCounter[12]+" € = "+ kaufm(ZutatenCounter[12]*PreisCounter[12])+" €";
+							document.getElementById('Basilikum').innerHTML = "Basilikum: "+ZutatenCounter[14]+" x "+ PreisCounter[14]+" € = "+ kaufm(ZutatenCounter[14]*PreisCounter[14])+" €";
+							document.getElementById('Paprika').innerHTML="Paprika: "+ZutatenCounter[11]+" x "+ PreisCounter[11]+" € = "+ kaufm(ZutatenCounter[11]*PreisCounter[11])+" €";
+							document.getElementById('Gesamtsumme').innerHTML="Gesamtpreis: "+kaufm(gesamtsumme)+" €";
 						}
 
 						var newsrc = "zutatloeschenfertig.png";
@@ -1849,7 +2122,7 @@ if(!session_is_registered(id)) {
                          <input type="image" src="images/belegen.png" title="weitere Zutaten hinzufügen" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange2();"> </input> &nbsp; &nbsp; &nbsp;
                          <input type="image" src="images/zutatloeschen.png" title="Zutaten löschen" id="entfernen" value="Zutat entfernen starten" onclick="removeZutat();"> </input>
                          <input type="image" src="images/zutatloeschenfertig.png" title="Pizza weiter belegen" id="entfernen" value="Zutat entfernen beenden" onclick="stopRemove();"> </input> &nbsp; &nbsp; &nbsp;
-                         <input type="image" src="images/keinezutaten.png" title="Alle Zutaten löschen" id="fertig" value="Pizza Fertig" onclick=""> </input>
+                         <input type="image" src="images/keinezutaten.png" title="Alle Zutaten löschen" id="fertig" value="Pizza Fertig" onclick="removeAll();"> </input>
                           </div>
 
 					<div id=preise>
