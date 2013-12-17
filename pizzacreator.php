@@ -128,7 +128,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 105)
@@ -239,7 +239,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 160)
@@ -353,7 +353,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 115)
@@ -379,9 +379,9 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
-							
+
+
+
 							else if(val == "Salami")
 							{
 								ZutatenCounter[1] += 1;
@@ -466,7 +466,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 105)
@@ -492,11 +492,11 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
-							
-							
-							
+
+
+
+
+
 							else if(val == "Pepperonisalami")
 							{
 								ZutatenCounter[2] += 1;
@@ -581,7 +581,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 125)
@@ -607,8 +607,8 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
+
+
 							else if(val == "Thunfisch")
 							{
 								ZutatenCounter[3] += 1;
@@ -693,7 +693,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 115)
@@ -719,8 +719,8 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
+
+
 							else if(val == "Pilz")
 							{
 								ZutatenCounter[4] += 1;
@@ -805,7 +805,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 115)
@@ -831,9 +831,9 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
-							
+
+
+
 							else if(val == "Kaese")
 							{
 								ZutatenCounter[16] += 1;
@@ -918,7 +918,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 115)
@@ -944,14 +944,14 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
-							
-							
-							
-							
-							
-							
+
+
+
+
+
+
+
+
 							else if(val == "Currysauce")
 							{
 								ZutatenCounter[18] += 1;
@@ -1030,8 +1030,8 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
+
+
 							else if(val == "Spinat")
 							{
 								ZutatenCounter[7] += 1;
@@ -1116,7 +1116,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 100)
@@ -1142,11 +1142,11 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-						
-							
-							
-							
+
+
+
+
+
 							else if(val == "Ei")
 							{
 								ZutatenCounter[10] += 1;
@@ -1231,7 +1231,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 125)
@@ -1257,9 +1257,9 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
-							
+
+
+
 							else if(val == "Zwiebel")
 							{
 								ZutatenCounter[13] += 1;
@@ -1344,7 +1344,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 112)
@@ -1370,10 +1370,10 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
-							
-							
+
+
+
+
 							else if(val == "Olive")
 							{
 								ZutatenCounter[6] += 1;
@@ -1458,7 +1458,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 145)
@@ -1484,10 +1484,10 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
-							
-							
+
+
+
+
 							else if(val == "Mozzarella")
 							{
 								ZutatenCounter[15] += 1;
@@ -1572,7 +1572,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 115)
@@ -1598,10 +1598,10 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-							
-							
-							
-							
+
+
+
+
 							else if(val == "Chilli")
 							{
 								ZutatenCounter[12] += 1;
@@ -1686,7 +1686,7 @@ if(!session_is_registered(id)) {
 
 													neuX = neuX + differenz;
 													neuY = neuY - differenzY;
-													
+
 													var neuX2 = neuX * neuX;
 													var neuY2 = neuY * neuY;
 													if(neuX2 + neuY2 <= 120)
@@ -1713,9 +1713,9 @@ if(!session_is_registered(id)) {
 								return false;
 							}
 					     };
-						 
+
 						 //Quelle: http://www.dcljs.de/faq/antwort.php?Antwort=rechnen_runden#5
-						 function kaufm(x) 
+						 function kaufm(x)
 						 {
   							var k = (Math.round(x * 100) / 100).toString();
   							k += (k.indexOf('.') == -1)? '.00' : '00';
@@ -1738,25 +1738,25 @@ if(!session_is_registered(id)) {
 							//RemoveAktiv wird auf true gesetzt, man kann löschen
 							removeAktiv = true;
 						}
-						
+
 						var newsrc = "zutatloeschenfertig.png";
 
-						function changeImageDeleteIngredients() 
+						function changeImageDeleteIngredients()
 						{
-  							if (newsrc == "zutatloeschenfertig.png" ) 
+  							if (newsrc == "zutatloeschenfertig.png" )
   							{
    								document.images["pic"].src = "images/zutatloeschenfertig.png";
 								document.images["pic"].alt = "Pizza weiter belegen";
 								newsrc  = "zutatloeschen.png";
 							}
-							else 
+							else
 							{
 								document.images["pic"].src = "images/zutatloeschen";
 								document.images["pic"].alt = "Zutaten löschen";
 								newsrc  = "zutatloeschenfertig.png";
 							}
 						}
-								
+
 						function stopRemove()
 						{
 							//RemoveAktiv wird auf false gesetzt, man kann nicht mehr löschen
@@ -1825,7 +1825,7 @@ if(!session_is_registered(id)) {
                          <input type="image" src="images/psalami.png" title="Pepperoni" id="but17" value="Pepperonisalami" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/schinken.png" title="Schinken" id="but2" value="Schinken" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/tuna.png" title="Thunfisch" id="but8" value="Thunfisch" onclick="hinzufuegen(this.value);"> </input> </p>
-                        <p><h2>&nbsp;Obst und Gemüse</h2></p> 
+                        <p><h2>&nbsp;Obst und Gemüse</h2></p>
                          <P><input type="image" src="images/mushroom.png" title="Pilze" id="but3" value="Pilz" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/tomato.png" title="Tomate" id="but4" value="Tomate" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/olives.png" title="Oliven" id="but6" value="Olive" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
@@ -1843,7 +1843,7 @@ if(!session_is_registered(id)) {
 						 <p><h2>&nbsp;Soßen</h2></p>
                          <P><input type="image" src="images/tomatosauce.png" title="Tomatensoße" id="but17" value="Tomatensauce" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/currysauce.png" title="Currysoße" id="but18" value="Currysauce" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
-                         <input type="image" src="images/keinesauce.png" title="keine Soße" id="but19" value="NoSauce" onclick="hinzufuegen(this.value);"> </input></p> 
+                         <input type="image" src="images/keinesauce.png" title="keine Soße" id="but19" value="NoSauce" onclick="hinzufuegen(this.value);"> </input></p>
                          <p><h2>&nbsp;Pizza Veränderungen</h2></p>
                          <P><input type="image" src="images/drehen.png" title="Pizza-Dreh-Ansicht" id="fertig" value="Pizza-Beweg-Ansicht" onclick="viewPointChange();"> </input>
                          <input type="image" src="images/belegen.png" title="weitere Zutaten hinzufügen" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange2();"> </input> &nbsp; &nbsp; &nbsp;
@@ -1851,7 +1851,7 @@ if(!session_is_registered(id)) {
                          <input type="image" src="images/zutatloeschenfertig.png" title="Pizza weiter belegen" id="entfernen" value="Zutat entfernen beenden" onclick="stopRemove();"> </input> &nbsp; &nbsp; &nbsp;
                          <input type="image" src="images/keinezutaten.png" title="Alle Zutaten löschen" id="fertig" value="Pizza Fertig" onclick=""> </input>
                           </div>
-                                                  
+
 					<div id=preise>
 					<p id="Auswahl" style="font-size:18px">Preisliste der ausgewählten Zutaten: </p>
                     <p style="font-size:14px">Pizzaboden: 3 €</p>
@@ -1876,7 +1876,9 @@ if(!session_is_registered(id)) {
                     <p id="Currysauce" style="font-size:14px"></p>
                     <P>----------------------------------------</P>
                     <p><p id="Gesamtsumme" style="font-size:20px"><strong>Gesamtpreis: 3 €</strong> </p>
-                    &nbsp; &nbsp; &nbsp;  <input type="image" src="images/pizzafertig2.png" title="Pizza bestellen" id="fertig" value="Pizza Fertig" onclick=""> </input> </p>
+                    &nbsp; &nbsp; &nbsp; <form>
+                    				<input type="button" title="Pizza bestellen" id="fertig" value="Pizza Fertig" onclick=""> </input>
+                    				</form></p>
                     </div>
     </div>
     </div>
