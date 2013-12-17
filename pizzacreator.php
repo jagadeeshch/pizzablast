@@ -1630,6 +1630,120 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
+							
+							
+							
+							
+							else if(val == "Chilli")
+							{
+								ZutatenCounter[12] += 1;
+								berechneGesamtpreis();
+								document.getElementById('Chilli').innerHTML = "Chilli: "+ZutatenCounter[12]+" x "+ PreisCounter[12]+" € = "+ kaufm(ZutatenCounter[12]*PreisCounter[12])+" €";
+								berechneGesamtpreis();
+
+								var meinTransform = document.createElement('Transform');
+								meinTransform.setAttribute('id','chilli_tOuter'+counter);
+
+								var meinInline = document.createElement('Inline');
+								meinInline.setAttribute('url','chilli1.x3d');
+								meinInline.setAttribute('id','chilli_inline'+counter);
+								meinInline.setAttribute('mapDefToId', 'true');
+								meinInline.setAttribute('nameSpaceName', 'chilli_tOuter'+counter);
+
+								var ot = document.getElementById('scene');
+								meinTransform.appendChild(meinInline);
+								ot.appendChild(meinTransform);
+
+								var myI = meinTransform.getAttribute('id');	//Transform, also tOuter
+								var myI2 = meinInline.getAttribute('id');	//Inline, also schinken_inline
+
+								var removeID = document.getElementById(meinTransform.getAttribute('id'));	//Transform, also tOuter
+								var removeID2 = document.getElementById(meinInline.getAttribute('id'));	//Inline, also schinken_inline
+
+								document.getElementById(myI).onmousedown = function(evt)
+								{
+									if(drag == true)
+									{
+										if(removeAktiv == true)
+										{
+											ZutatenCounter[12] -= 1;
+											berechneGesamtpreis();
+											document.getElementById('Chilli').innerHTML="Chilli: "+ZutatenCounter[12]+" x "+ PreisCounter[12]+" € = "+ kaufm(ZutatenCounter[12]*PreisCounter[12])+" €";
+											var test = removeID.getAttribute('id');
+											var test2 = removeID2.getAttribute('id');
+											var rinline = document.getElementById(test);
+											var rinline2 = document.getElementById('test2');
+											var removed = ot.removeChild(rinline);
+											var removed2 = ot.removeChild(rinline2);
+										}
+										else
+										{
+											if (ID == "null")
+											{
+												oldMousePosX = evt.layerX;
+												oldMousePosY = evt.layerY;
+												mousedown = true;
+												ID = myI;
+											}
+										}
+									}
+								}
+
+								document.getElementById(myI).onmousemove = function(evt)
+								{
+									if (myI == ID)
+									{
+										if(drag == true)
+										{
+											if(mousedown == true)
+											{
+													newMousePosX = evt.layerX;
+
+													newMousePosY = evt.layerY;
+													var differenz = (newMousePosX - oldMousePosX) / 15 ;
+													var differenzY = (newMousePosY - oldMousePosY) / 15  ;
+
+													var newId = myI+"__trans";
+
+													var position = document.getElementById(newId).getAttribute("translation");
+													var res = position.split(" ");
+
+													var x = res[0];
+													var y = res[1];
+													var z = res[2];
+
+													var neuX = Number(x);
+													var neuY = Number(y);
+
+
+													neuX = neuX + differenz;
+													neuY = neuY - differenzY;
+													
+													var neuX2 = neuX * neuX;
+													var neuY2 = neuY * neuY;
+													if(neuX2 + neuY2 <= 120)
+													{
+														oldMousePosX = newMousePosX;
+														oldMousePosY = newMousePosY;
+
+														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
+
+														newMousePosX = 0;
+													}
+											}
+										}
+									}
+								}
+
+								document.onmouseup = function (evt)
+								{
+									mousedown = false;
+									ID = "null";
+								}
+
+								counter++;
+								return false;
+							}
 
 					     };
 						 
@@ -1753,7 +1867,7 @@ if(!session_is_registered(id)) {
                          <input type="image" src="images/maize.png" title="Mais" id="but10" value="Mais" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/egg.png" title="Ei" id="but11" value="Ei" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/paprika.png" title="Paprika" id="but12" value="Paprika" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
-                         <input type="image" src="images/chili.png" title="Chili" id="but13" value="Chili" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
+                         <input type="image" src="images/chili.png" title="Chili" id="but13" value="Chilli" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/onion.png" title="Zwiebel" id="but14" value="Zwiebel" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/basil.png" title="Basilikum" id="but15" value="Basilikum" onclick="hinzufuegen(this.value);"> </input></p>
                          <p><h2>&nbsp;K&auml;sesorten</h2></p>
@@ -1786,7 +1900,7 @@ if(!session_is_registered(id)) {
                     <p id="Mais" style="font-size:14px"></p>
                     <p id="Ei" style="font-size:14px"></p>
                     <p id="Paprika" style="font-size:14px"></p>
-                    <p id="Chili" style="font-size:14px"></p>
+                    <p id="Chilli" style="font-size:14px"></p>
                     <p id="Zwiebel" style="font-size:14px"></p>
                     <p id="Basilikum" style="font-size:14px"></p>
                     <p id="Mozzarella" style="font-size:14px"></p>
