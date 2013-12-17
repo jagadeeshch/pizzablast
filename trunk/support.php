@@ -36,22 +36,25 @@ if(!session_is_registered(id)) {
  	</div>
 	<div id="content">
 		<div>
+        
 			<h1>Kontaktformular</h1>
-			<p>Sie haben Fragen, Anregungen oder gar Kritik? Kein Problem! Bitte zögern Sie nicht uns über dieses Kontaktformular zu kontaktieren.                             Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen.</p>
+			<p>Sie haben Fragen, Anregungen oder gar Kritik? Kein Problem! Bitte zögern Sie nicht uns über dieses Kontaktformular zu kontaktieren. <br/><br/> Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen.</p>
             <p><br /></p>
+            <div id="form">
               <form action="php/kontakt.php" method="post">
-              		<p>Name:* <input type="text" class="input" name="Name" /></p>
+              		<p>Name:* <input type="text" class="input" name="Name" /></p> 
               		<p>E-Mail:* <input type="text" class="input" name="Email" /></p>
-              		<p>Betreff:* <input type="text" class="input" name="Betreff" /></p>
-              		<p>Ihre Nachricht:* <textarea name="Nachricht" rows="10"></textarea></p>
+              		<p>Betreff:* <input type="text" class="input" name="Betreff" /></p> 
+              		<p>Ihre Nachricht:* <textarea name="Nachricht" rows="10"></textarea></p> 
               		<p><br /></p>
               		<p><br /></p>
               		<p><br /></p>
                     <br />
-              		<p><input class="button" type="submit" /></p>
+              		<p><input class="button" value="Abschicken" type="submit" /></p>
               </form>
               <p><br /></p>
               <p><br /></p>
+              </div>
 		</div>
 	</div>
 		<div id="footer">
