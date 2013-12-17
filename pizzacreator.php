@@ -946,7 +946,84 @@ if(!session_is_registered(id)) {
 							}
 
 
+							else if(val == "Tomatensauce")
+							{
+								ZutatenCounter[17] += 1;
+								berechneGesamtpreis();
+								document.getElementById('Tomatensauce').innerHTML = "Tomatensauce: "+ZutatenCounter[17]+" x "+ PreisCounter[17]+" € = "+ kaufm(ZutatenCounter[17]*PreisCounter[17])+" €";
+								berechneGesamtpreis();
 
+								var meinTransform = document.createElement('Transform');
+								meinTransform.setAttribute('id','tomatensauce_tOuter'+counter);
+
+								var meinInline = document.createElement('Inline');
+								meinInline.setAttribute('url','tomatensauce.x3d');
+								meinInline.setAttribute('id','tomatensauce_inline'+counter);
+								meinInline.setAttribute('mapDefToId', 'true');
+								meinInline.setAttribute('nameSpaceName', 'tomatensauce_tOuter'+counter);
+
+								var ot = document.getElementById('scene');
+								meinTransform.appendChild(meinInline);
+								ot.appendChild(meinTransform);
+
+								var myI = meinTransform.getAttribute('id');	//Transform, also tOuter
+								var myI2 = meinInline.getAttribute('id');	//Inline, also schinken_inline
+
+								var removeID = document.getElementById(meinTransform.getAttribute('id'));	//Transform, also tOuter
+								var removeID2 = document.getElementById(meinInline.getAttribute('id'));	//Inline, also schinken_inline
+
+								document.getElementById(myI).onmousedown = function(evt)
+								{
+									if(drag == true)
+									{
+										if(removeAktiv == true)
+										{
+											ZutatenCounter[17] -= 1;
+											berechneGesamtpreis();
+											document.getElementById('Tomatensauce').innerHTML="Tomatensauce: "+ZutatenCounter[17]+" x "+ PreisCounter[17]+" € = "+ kaufm(ZutatenCounter[17]*PreisCounter[17])+" €";
+											var test = removeID.getAttribute('id');
+											var test2 = removeID2.getAttribute('id');
+											var rinline = document.getElementById(test);
+											var rinline2 = document.getElementById('test2');
+											var removed = ot.removeChild(rinline);
+											var removed2 = ot.removeChild(rinline2);
+										}
+										else
+										{
+											if (ID == "null")
+											{
+												oldMousePosX = evt.layerX;
+												oldMousePosY = evt.layerY;
+												mousedown = true;
+												ID = myI;
+											}
+										}
+									}
+								}
+
+								document.getElementById(myI).onmousemove = function(evt)
+								{
+									if (myI == ID)
+									{
+										if(drag == true)
+										{
+											if(mousedown == true)
+											{
+												//tu nix
+											}
+										}
+									}
+								}
+
+								document.onmouseup = function (evt)
+								{
+									mousedown = false;
+									ID = "null";
+								}
+
+								counter++;
+								return false;
+							}
 
 
 
@@ -2001,6 +2078,7 @@ if(!session_is_registered(id)) {
 							document.getElementById('Pilz').innerHTML = "Pilz: "+ZutatenCounter[4]+" x "+ PreisCounter[4]+" € = "+ kaufm(ZutatenCounter[4]*PreisCounter[4])+" €";
 							document.getElementById('Kaese').innerHTML = "Käse: "+ZutatenCounter[16]+" x "+ PreisCounter[16]+" € = "+ kaufm(ZutatenCounter[16]*PreisCounter[16])+" €";
 							document.getElementById('Currysauce').innerHTML = "Currysoße: "+ZutatenCounter[18]+" x "+ PreisCounter[18]+" € = "+ kaufm(ZutatenCounter[18]*PreisCounter[18])+" €";
+							document.getElementById('Tomatensauce').innerHTML = "Tomatensauce: "+ZutatenCounter[17]+" x "+ PreisCounter[17]+" € = "+ kaufm(ZutatenCounter[17]*PreisCounter[17])+" €";
 							document.getElementById('Spinat').innerHTML = "Spinat: "+ZutatenCounter[7]+" x "+ PreisCounter[7]+" € = "+ kaufm(ZutatenCounter[7]*PreisCounter[7])+" €";
 							document.getElementById('Ei').innerHTML = "Ei: "+ZutatenCounter[10]+" x "+ PreisCounter[10]+" € = "+ kaufm(ZutatenCounter[10]*PreisCounter[10])+" €";
 							document.getElementById('Zwiebel').innerHTML = "Zwiebel: "+ZutatenCounter[13]+" x "+ PreisCounter[13]+" € = "+ kaufm(ZutatenCounter[13]*PreisCounter[13])+" €";
@@ -2056,7 +2134,7 @@ if(!session_is_registered(id)) {
 							document.getElementById('test1__navi').setAttribute("type", "NONE");
 							document.getElementById("boxes").runtime.resetView();
 							drag = true;
-						}
+						}					
   </script>
 </head>
 
@@ -2104,7 +2182,6 @@ if(!session_is_registered(id)) {
                          <input type="image" src="images/olives.png" title="Oliven" id="but6" value="Olive" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/spinach.png" title="Spinat" id="but7" value="Spinat" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/pineapple.png" title="Ananas" id="but9" value="Ananas" onclick="hinzufuegen(this.value);"> </input> <br/>
-                         <input type="image" src="images/maize.png" title="Mais" id="but10" value="Mais" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/egg.png" title="Ei" id="but11" value="Ei" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/paprika.png" title="Paprika" id="but12" value="Paprika" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/chili.png" title="Chili" id="but13" value="Chilli" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
@@ -2116,7 +2193,6 @@ if(!session_is_registered(id)) {
 						 <p><h2>&nbsp;Soßen</h2></p>
                          <P><input type="image" src="images/tomatosauce.png" title="Tomatensoße" id="but17" value="Tomatensauce" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/currysauce.png" title="Currysoße" id="but18" value="Currysauce" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
-                         <input type="image" src="images/keinesauce.png" title="keine Soße" id="but19" value="NoSauce" onclick="hinzufuegen(this.value);"> </input></p>
                          <p><h2>&nbsp;Pizza Veränderungen</h2></p>
                          <P><input type="image" src="images/drehen.png" title="Pizza-Dreh-Ansicht" id="fertig" value="Pizza-Beweg-Ansicht" onclick="viewPointChange();"> </input>
                          <input type="image" src="images/belegen.png" title="weitere Zutaten hinzufügen" id="fertig" value="Zutaten-Beweg-Ansicht" onclick="viewPointChange2();"> </input> &nbsp; &nbsp; &nbsp;
@@ -2137,7 +2213,6 @@ if(!session_is_registered(id)) {
                     <p id="Olive" style="font-size:14px"></p>
                     <p id="Spinat" style="font-size:14px"></p>
                     <p id="Ananas" style="font-size:14px"></p>
-                    <p id="Mais" style="font-size:14px"></p>
                     <p id="Ei" style="font-size:14px"></p>
                     <p id="Paprika" style="font-size:14px"></p>
                     <p id="Chilli" style="font-size:14px"></p>
@@ -2145,12 +2220,12 @@ if(!session_is_registered(id)) {
                     <p id="Basilikum" style="font-size:14px"></p>
                     <p id="Mozzarella" style="font-size:14px"></p>
                     <p id="Kaese" style="font-size:14px"></p>
-                    <p id="Tomatensoße" style="font-size:14px"></p>
+                    <p id="Tomatensauce" style="font-size:14px"></p>
                     <p id="Currysauce" style="font-size:14px"></p>
                     <P>----------------------------------------</P>
                     <p><p id="Gesamtsumme" style="font-size:20px"><strong>Gesamtpreis: 3 €</strong> </p>
                     &nbsp; &nbsp; &nbsp; <form>
-                    				<input type="button" title="Pizza bestellen" id="fertig" value="Pizza Fertig" onclick=""> </input>
+                    				<input type="button" title="Pizza bestellen" id="fertig" value="Pizza Fertig" onclick="alert('Ihre Pizzabestellung wurde abgeschickt!');"> </input>
                     				</form></p>
                     </div>
     </div>
