@@ -2224,9 +2224,9 @@ if(!session_is_registered(id)) {
                     <p id="Currysauce" style="font-size:14px"></p>
                     <P>----------------------------------------</P>
                     <p><p id="Gesamtsumme" style="font-size:20px"><strong>Gesamtpreis: 3 €</strong> </p>
-                    &nbsp; &nbsp; &nbsp; <form>
-                    				<input type="button" title="Pizza bestellen" id="fertig" value="Pizza Fertig" onclick="alert('Ihre Pizzabestellung wurde abgeschickt!');"> </input>
-                    				</form></p>
+                    &nbsp; &nbsp; &nbsp; 
+                    				<input type="image" src="images/pizzafertig2.png" title="Pizza bestellen" id="fertig" value="Pizza Fertig" onclick="alert('Ihre Pizzabestellung wurde abgeschickt!');"> </input>
+                    				</p>
                     </div>
     </div>
     </div>
