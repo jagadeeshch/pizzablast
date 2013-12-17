@@ -1015,39 +1015,7 @@ if(!session_is_registered(id)) {
 										{
 											if(mousedown == true)
 											{
-													newMousePosX = evt.layerX;
-
-													newMousePosY = evt.layerY;
-													var differenz = (newMousePosX - oldMousePosX) / 15 ;
-													var differenzY = (newMousePosY - oldMousePosY) / 15  ;
-
-													var newId = myI+"__trans";
-
-													var position = document.getElementById(newId).getAttribute("translation");
-													var res = position.split(" ");
-
-													var x = res[0];
-													var y = res[1];
-													var z = res[2];
-
-													var neuX = Number(x);
-													var neuY = Number(y);
-
-
-													neuX = neuX + differenz;
-													neuY = neuY - differenzY;
-													
-													var neuX2 = neuX * neuX;
-													var neuY2 = neuY * neuY;
-													//if(neuX2 + neuY2 <= 115)
-													//{
-														oldMousePosX = newMousePosX;
-														oldMousePosY = newMousePosY;
-
-														document.getElementById(newId).setAttribute("translation", neuX + " " + neuY + " " + z);
-
-														newMousePosX = 0;
-													//}
+												//tu nix
 											}
 										}
 									}
@@ -1744,7 +1712,6 @@ if(!session_is_registered(id)) {
 								counter++;
 								return false;
 							}
-
 					     };
 						 
 						 //Quelle: http://www.dcljs.de/faq/antwort.php?Antwort=rechnen_runden#5
