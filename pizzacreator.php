@@ -2172,7 +2172,7 @@ if(!session_is_registered(id)) {
 
                     	<div id="meat">
                         <p><h2>&nbsp;Fleisch</h2></p>
-                        <P><input type="image" src="images/salami.png" title="Salami" id="but1" value="Salami" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
+                        <P><input type="image" src="images/Salami.png" title="Salami" id="but1" value="Salami" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/psalami.png" title="Pepperoni" id="but17" value="Pepperonisalami" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/schinken.png" title="Schinken" id="but2" value="Schinken" onclick="hinzufuegen(this.value);"> </input> &nbsp; &nbsp;
                          <input type="image" src="images/tuna.png" title="Thunfisch" id="but8" value="Thunfisch" onclick="hinzufuegen(this.value);"> </input> </p>
